@@ -1,0 +1,16 @@
+/*
+* { margin:0; padding:0; }
+body { font: 72.5%/1.7em "Lucida Grande", "Lucida Sans Unicode", verdana, geneva, sans-serif; color:#555; 
+background: #fff url(../images/headerbg.gif) repeat-x; 
+margin-left:700px;
+margin-top:120px;
+}
+*/
+
+
+#left { float: left; width: 570px; margin: 0 0 20px 0; }
+	#left h2 { float: left; font: 2.1em "Trebuchet MS", Arial; background: url(../images/h2bg.gif) repeat-x bottom; color:#121212; letter-spacing:-1px; margin: 0px 0 20px 0; clear:left; }
+	#left h2 a { color:#121212; text-decoration:none; border: 0; }
+	#left p { clear: both; margin: 5px 0 20px 0; font-size:110%; line-height:21px; }
+
+	

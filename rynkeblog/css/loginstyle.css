@@ -1,0 +1,14 @@
+div.loginform{
+
+width: 20%;
+border-style:solid;
+border-width:5px;
+font: 100%/1.7em "Lucida Grande", "Lucida Sans Unicode", verdana, geneva, sans-serif; color:#black;
+padding: 10px;
+/*background: #fff url(../images/headerbg.gif) repeat-x;*/ 	
+margin-left:750px;
+margin-top:400px;
+
+}
+
+
