@@ -5,7 +5,7 @@
 	<meta name="author" content="Martin Bang Tollefsen" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection" />
-	<title>Marin Bang Tollefsen &middot; BLOG</title>
+	<title>Ompa Lompa MegaBlog</title>
 </head>
 <body id="home">
 <?php include_once 'menu.php'; ?>

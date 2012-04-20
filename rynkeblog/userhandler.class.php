@@ -145,9 +145,27 @@ class UserHandler{
         //sende bekreftelse til email
         //trenger bare epost tjener for å sende epost og teste den
         mail($email, 'Registrasjonsbekrefting', 
-            'Du ble registrert som bruker på MegaBlog, 
-             for å aktivere brukerakkount tast inn aktivasjonskode (kode her), her '.$_SERVER['SERVER_ADDR'].'activate.php, 
-                 eller trykk her'.$_SERVER['SERVER_ADDR'].'activate.php?activation='.$aktivationCode); 
+            'Du ble registrert som bruker på MegaBlog, for å aktivere brukerakkount tast inn aktivasjonskode '.$aktivationCode.', her '.$_SERVER['SERVER_ADDR'].'/activate.php, eller trykk her '.$_SERVER['SERVER_ADDR'].'/activate.php?activation='.$aktivationCode); 
+    }
+    
+    public function activate($code) {
+         include('config.php');
+         $this->query = "SELECT * FROM `user` WHERE password_temporary='".$code."'";
+         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
+         $this->result = mysql_fetch_array($this->result);
+         if(($this->result) != FALSE) {
+             $this->username = $this->result['username'];
+             print $this->result;
+             $this->query = 'UPDATE `user` SET isBlocked=0 WHERE username ="'.$this->username.'"';
+             mysql_query($this->query) or die($this->queryError(mysql_error()));
+             $this->query = 'UPDATE `user` SET password_temporary="" WHERE username ="'.$this->username.'"';
+             mysql_query($this->query) or die($this->queryError(mysql_error())); 
+             return $this->username;
+         }
+         else {
+             throw new Exception('Activation code not found');
+             
+         }
     }
     
     /**
@@ -183,6 +201,10 @@ class UserHandler{
         $this->query = "SELECT * FROM `user` WHERE `username`='".$this->username."' AND `password`='".$password."'";
         $this->result = mysql_query($this->query) or die('Opps something går weird in autentificate function: ' . mysql_error());
         if(($this->result = mysql_fetch_array($this->result)) != FALSE & $this->result[0] == $this->username & $this->result[2] == $password) {
+            //sjekker om bruker er sperret
+            if($this->result['isBlocked'] == 1) {
+                throw new Exception('Your profile is blocked, check your email if you have activation code or contact administrator');
+            }
             //user found, returnerer id
             return $this->result['userid'];
         }
@@ -285,10 +307,10 @@ class UserHandler{
     }
 }
 /////////////////////TEST
-$test = new UserHandler('test');
+//$test = new UserHandler('test');
 //$test->sendPassword('timkinmail@gmail.com');
 //$test->changePassword("test222", "test222");
-$test->autentificate('test222');
+//$test->autentificate('test222');
 //$test->blockUnblockUser(1);
 //$test->getAllComments();
 //$test->checkIfUsernameExists('test2');
