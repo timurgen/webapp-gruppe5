@@ -14,11 +14,17 @@
   <body>
     <
     <?php
-        require ('blogpost.class.php');
-		
-        $blogpost = new blogpost('gjestebok.xml');
-        $blogpost->readFile();
-        $blogpost->printFile();
+        require ('blogentityhandler.class.php');
+        
+        try{
+            
+        $showpost = new BlogEntityHandler();
+        $showpost->getEntity($_id);
+        }
+        catch(Exception $e){
+            return $e;
+        }
+       
     ?>
      
   </body>
