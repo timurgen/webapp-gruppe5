@@ -42,8 +42,5 @@
 			<p>Design: Martin Bang Tollefsen(w3chool for CSS info, <a title="www.w3schools.com" href="www.w3schools.com">w3s</a></p>
 		</div>		
 	</div>
-    <h2>Martin Hui</h2>
-    <h3>Test test test</h3>
-    <p>test 2</p>
 </body>
 </html>

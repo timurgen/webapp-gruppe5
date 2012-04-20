@@ -13,26 +13,24 @@
       </head>
   <body>
 <?php //
-    require ('blogpost.class.php');
-    require ('hilsen.class.php');
-    //$gjestebok->printFile();
-    if((isset($_POST['tittel']) ? $_POST['tittel'] : '') && (isset($_POST['tekst']) ? $_POST['tekst'] : '')) {
-    //var_dump($_POST);
-    $hilsen = new hilsen($_POST['tittel'], $_POST['tekst'], $_POST['web']);
-    $blogpost = new blogpost('gjestebok.xml');
-    $blogpost->readFile();
-    $blogpost->addToFile($hilsen);
-    echo "Takk for din hilsen";
+    require ('blogentityhandler.class.php');
+            try{
+             $object = new BlogEntityHandler();
+             $object->addNewEntity($_username, $_titel, $_text, $_category, $_tags, $_payload);
+            }
+            
+            catch(Exception $e){
+                return e;
+            }
+             
 }
-else {
-    echo "B&aring;de feltene navn og hilsen m&aring; v&aelig;re utfylte";
-}
+
+
 ?>
-<a href="index.php">Tilbake til forsiden</a> 
-</body>
-</html>
-<?PHP } else { ?>
+
+
+
       
   
       
-<?PHP } ?>
+
