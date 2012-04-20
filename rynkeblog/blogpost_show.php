@@ -12,14 +12,19 @@
     content="text/html; charset=utf-8" />
   </head>
   <body>
-    <
     <?php
-        require ('blogentityhandler.class.php');
-        
-        try{
+        require ('blogentityhandler.class.php');     
+        try
+        {    
+            $showpost = new BlogEntityHandler();
+            $maxium = $showpost->maxID();
+            for ($i = 0; $i < $maxium; $i++)
+            {
+                $kukk = $showpost->getEntity($i);
+                echo $kukk[title];
+                echo $kukk[text];
             
-        $showpost = new BlogEntityHandler();
-        $showpost->getEntity($_id);
+            }
         }
         catch(Exception $e){
             return $e;

@@ -134,12 +134,21 @@ class BlogEntityHandler{
         mysql_close($this->dbconnection);
         //print PHP_EOL."DB Connection closed OK";  
     }
+    
+    public function maxID()
+    {
+        $this->query = 'SELECT MAX(id) as id FROM `blog_entity`';
+        $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
+        $max = mysql_fetch_array($this->result, MYSQL_BOTH);
+        $max = $max[0];
+        return $max;
+    }
 }
 /////////////////TEST
-$test = new BlogEntityHandler();
+//$test = new BlogEntityHandler();
 //$test->addComment(1, 1, '23123123123123123123123123123123123123123123123123123123123');
 //$test->getEntity(1);
 //$test->getEntitiesByTag('test');
-$test->addNewEntity(1, 'Test 2', 'text test 2', 'test', 'tag1, tag 2', null);
+//$test->addNewEntity(1, 'Test 2', 'text test 2', 'test', 'tag1, tag 2', null);
 
 ?>

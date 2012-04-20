@@ -14,12 +14,13 @@
   <body>
 <?php //
     require ('blogentityhandler.class.php');
-            try{
-             $object = new BlogEntityHandler();
-             $object->addNewEntity($_username, $_titel, $_text, $_category, $_tags, $_payload);
+            try
+            {
+                $object = new BlogEntityHandler();
+                $object->addNewEntity($_username, $_titel, $_text, $_category, $_tags, $_payload);
             }
-            
-            catch(Exception $e){
+            catch(Exception $e)
+            {
                 return e;
             }
              
