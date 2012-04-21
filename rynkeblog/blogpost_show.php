@@ -21,7 +21,9 @@
             for ($i = $maxium; $i > -1; $i--)
             {
                 $blogpost = $showpost->getEntity($i);
-                echo "<table border=5 width=100%>";
+                
+                echo "<div id=onepost>";
+                echo "<table border=0 width=100%>";
                     echo "<tr height=30>";
                         echo "<td>"; 
                             echo $blogpost[title];
@@ -46,7 +48,8 @@
                          echo "</td>";
                     echo "</tr>"; 
                 echo "</table>";
-                echo "</br>";
+                echo "</div>";
+                echo "</br>";         
             }
         }
         catch(Exception $e){

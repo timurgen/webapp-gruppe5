@@ -48,3 +48,12 @@ h1 a:hover { color: #FFFCB3; }
 
 #footer { clear: both; border-top: 1px solid #ccc; padding: 20px 0; color:#808080; }
 #footer p { line-height: 2.5em; } 
+
+#onepost {
+    border: 3px solid #434343;
+    padding: 10px;
+    background: #e3e3e3;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px 15px 15px 15px;
+}
