@@ -18,12 +18,35 @@
         {    
             $showpost = new BlogEntityHandler();
             $maxium = $showpost->maxID();
-            for ($i = 0; $i < $maxium; $i++)
+            for ($i = $maxium; $i > -1; $i--)
             {
-                $kukk = $showpost->getEntity($i);
-                echo $kukk[title];
-                echo $kukk[text];
-            
+                $blogpost = $showpost->getEntity($i);
+                echo "<table border=5 width=100%>";
+                    echo "<tr height=30>";
+                        echo "<td>"; 
+                            echo $blogpost[title];
+                        echo "</td>";
+                        echo "<td align=right>"; 
+                            echo $blogpost[creation_date];
+                        echo "</td>";
+                    echo "</tr>";
+                    
+                    echo "<tr >";
+                        echo "<td colspan=2 align=justify>";
+                            echo $blogpost[text];
+                        echo "</td>";
+                    echo "</tr>";
+                    
+                    echo "<tr height=30>";
+                         echo "<td align=left>";
+                            echo $blogpost[kategory];
+                         echo "</td>";
+                         echo "<td align=right>";
+                            echo "Author - " . $blogpost[author];
+                         echo "</td>";
+                    echo "</tr>"; 
+                echo "</table>";
+                echo "</br>";
             }
         }
         catch(Exception $e){
