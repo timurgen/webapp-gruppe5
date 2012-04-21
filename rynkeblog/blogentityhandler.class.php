@@ -149,6 +149,6 @@ class BlogEntityHandler{
 //$test->addComment(1, 1, '23123123123123123123123123123123123123123123123123123123123');
 //$test->getEntity(1);
 //$test->getEntitiesByTag('test');
-//$test->addNewEntity(1, 'Test 2', 'text test 2', 'test', 'tag1, tag 2', null);
+//$test->addNewEntity(1, 'Test 3', 'Arcenal Chelsea', 'test', 'tag1, tag 2', null);
 
 ?>

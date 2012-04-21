@@ -1,4 +1,5 @@
 <?php
+  session_start();
   echo "<?xml version=\"1.0\"?>";
   if(isset($_SESSION['userid'])) {
       //dersom session startet viser new blog form
@@ -12,26 +13,26 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       </head>
   <body>
-<?php //
-    require ('blogentityhandler.class.php');
+      
+<?php 
+    //require ('blogentityhandler.class.php');
+    include ('blogentityhandler.class.php');
             try
             {
                 $object = new BlogEntityHandler();
-                $object->addNewEntity($_username, $_titel, $_text, $_category, $_tags, $_payload);
+                //$object->addNewEntity($_username, $_titel, $_text, $_category, $_tags, $_payload);
+                //$object->addNewEntity(1, 'HardCodedTittel', 'TextForDummies', 'BlogTestingSystem', 'TestTag1, TestTag2', null);
+                $object->addNewEntity(1, $_POST['tittel'], $_POST['tekst'], 'testing', 'testtags', null);
+
             }
             catch(Exception $e)
             {
-                return e;
-            }
-             
-}
-
-
+                echo $e;
+                return $e;
+            }     
+  }
 ?>
-
-
-
       
-  
+  </body>
+</html>
       
-
