@@ -166,6 +166,18 @@ class BlogEntityHandler{
         return $final_result;
     }
     
+    public function getNumberComments($_id) {
+        
+            $this->query = "SELECT * FROM `comments` WHERE `blog_id`=".$_id;
+            $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
+            $final_result;
+            $index = 0;
+            while($resultrow = mysql_fetch_array($this->result)) {
+                $index++;
+            }
+        return $index;
+    }
+    
 }
 /////////////////TEST
 //$test = new BlogEntityHandler();

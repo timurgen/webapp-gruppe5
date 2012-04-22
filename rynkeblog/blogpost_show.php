@@ -22,6 +22,7 @@
             {
                 $blogpost = $showpost->getEntity($i);
                 $postername = $showpost->getName($blogpost[author]);
+                $numComments = $showpost->getNumberComments($i);
                 echo "<div id=onepost>";
                 echo "<table border=0 width=100%>";
                     echo "<tr height=30>";
@@ -58,6 +59,7 @@
                     
                 echo "</table>";
                 echo "</div>";
+                echo "<a href=blogpost_comments.php?id=$blogpost[id]>" . "<h3>$numComments Comments</h3>" . "</a>";
                 echo "</br>";         
             }
         }
