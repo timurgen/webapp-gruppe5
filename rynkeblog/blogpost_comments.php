@@ -113,29 +113,24 @@
                
                     $showcomment = new BlogEntityHandler();
                     
-                    
-                    //$maxCommentId = $showcomment->maxComment();
-                    
-                     
-                    //echo $commentpost[blog_id] . PHP_EOL;
-                    //echo $commentId . PHP_EOL;
-                    //echo $commentpost[user_id] . PHP_EOL;
-                    //echo $commentpost[date_time] . PHP_EOL;
-                    //echo $commentpost[text] . PHP_EOL;
-                    
                     $commentId = $_GET['id'];
                     $commentpost = $showcomment->getComments($commentId);
                     
-                   
+                    //echo $postername = $showcomment->getName($commentpost[1][user_id]);
                     
-                    for ($i = 0; $i < sizeof($commentpost) + 1; $i++)
+                    for ($i = 1; $i < sizeof($commentpost) + 1; $i++)
                     {
-                        if($commentpost[$i][blog_id] == $commentId)
-                        {  
-                        echo "<table border=3 width=100%>";
+                        //$commentpost[$i]['user_id'];
+                        $postername = $showcomment->getName($commentpost[$i]['user_id']);
+                        //echo $postername;
+                        
+                        echo "<br />";
+                        echo "<div id=comment>";
+                        echo "<table width=100%>";
                             echo "<tr height=30>";
                                 echo "<td>"; 
-                                    echo $commentpost[$i][user_id];
+                                    echo $postername;
+                                    //echo $commentpost[$i][user_id];
                                 echo "</td>";
                                 echo "<td align=right>"; 
                                     echo $commentpost[$i][date_time];
@@ -148,7 +143,8 @@
                                 echo "</td>";
                             echo "</tr>";
                          echo "</table>";
-                        }
+                         echo "</div>";
+                         echo "<br />";
                     }
                     
                 }

@@ -162,26 +162,10 @@ class BlogEntityHandler{
             while($resultrow = mysql_fetch_array($this->result)) {
                 $index++;
                 $final_result[$index] = $resultrow;
-                echo $index;
             }
         return $final_result;
-        
-        
-       /* $this->query = 'SELECT * FROM `comments` WHERE `blog_id`='.$_id;
-        $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
-        if(($this->result = mysql_fetch_array($this->result)) != FALSE) {
-            return $this->result;
-        } */
     }
     
-    public function maxComment()
-    {
-        $this->query = 'SELECT MAX(comment_id) as comment_id FROM `comments`';
-        $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
-        $max = mysql_fetch_array($this->result, MYSQL_BOTH);
-        $max = $max[0];
-        return $max;
-    }
 }
 /////////////////TEST
 //$test = new BlogEntityHandler();
