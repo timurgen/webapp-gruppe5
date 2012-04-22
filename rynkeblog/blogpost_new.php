@@ -22,7 +22,7 @@
                 $object = new BlogEntityHandler();
                 //$object->addNewEntity($_username, $_titel, $_text, $_category, $_tags, $_payload);
                 //$object->addNewEntity(1, 'HardCodedTittel', 'TextForDummies', 'BlogTestingSystem', 'TestTag1, TestTag2', null);
-                $object->addNewEntity(1, $_POST['tittel'], $_POST['tekst'], 'testing', 'testtags', null);
+                $object->addNewEntity(1, $_POST['tittel'], $_POST['tekst'], 'testing', $_POST['tags'], null);
 
             }
             catch(Exception $e)

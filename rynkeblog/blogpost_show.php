@@ -46,7 +46,16 @@
                          echo "<td align=right>";
                             echo "Author - " . $postername;
                          echo "</td>";
-                    echo "</tr>"; 
+                    echo "</tr>";
+                    
+                    
+                    echo "<tr height=30>";
+                        echo "<td colspan=2 align=left>";
+                            echo "<hr />";
+                            echo $blogpost[tags];
+                        echo "</td>";
+                    echo "</tr>";
+                    
                 echo "</table>";
                 echo "</div>";
                 echo "</br>";         

@@ -41,6 +41,16 @@
             </textarea>
           </td>
         </tr>
+          
+        <tr>
+            <td width="150">
+                Tags
+            </td>
+            <td>
+                <input type="text" name="tags">
+            </td>
+        </tr>
+          
         <tr>
           <td>
             <input type="submit" name="ny" value="Legg Inn" />
