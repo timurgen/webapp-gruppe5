@@ -57,3 +57,7 @@ function ajaxCheck(name, email) {//sender forespørsel fila check.php som return
     xmlhttp.send(null);
     return xmlhttp.responseText;
 }
+
+function update() {
+    alert("Hui");
+}

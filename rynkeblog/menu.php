@@ -12,7 +12,7 @@
                         <?PHP if($_SESSION['userid'] == null) { ?> 
 			<li><a href="login.php" accesskey="c"><span class="akey">L</span>ogin</a></li>
                         <?PHP } ?>
-			<li><a href="contact.htm" accesskey="t">Con<span class="akey">t</span>act</a></li>
+			<li><a href="contact.php" accesskey="t">Con<span class="akey">t</span>act</a></li>
                         <?PHP if(isset($_SESSION['userid'])) { ?> 
                         <li><a href="blogpost.php" accesskey="s">Po<span class="akey">s</span>t artikkel</a></li >
                         <li><a href="login.php?logoff=true" accesskey="l">Log<span class="akey">o</span>ff</a></li>

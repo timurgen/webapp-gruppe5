@@ -1,15 +1,13 @@
 <!DOCTYPE HTML>
-
+<?php session_start() ?>
 <html>
 <head>
 <title>Contact</title>
-<link rel="stylesheet" href="css/links.css" type="text/css"  />
+<link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection" />
 </head>
-<body>
+<body id="home">
+    <?php include_once 'menu.php'; ?>
 
-<p><strong>H�gskolen i Narvik:</strong> <a href="http://www.w3schools.com">Home</a>
-
-<p><strong>Back to frontpage:</strong> <a href="index.php">Home</a>
 
 		
 		
