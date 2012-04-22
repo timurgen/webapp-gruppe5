@@ -105,6 +105,58 @@
             </table>
         </form>
         
+        <?php
+                
+                
+            try
+                {
+               
+                    $showcomment = new BlogEntityHandler();
+                    
+                    
+                    //$maxCommentId = $showcomment->maxComment();
+                    
+                     
+                    //echo $commentpost[blog_id] . PHP_EOL;
+                    //echo $commentId . PHP_EOL;
+                    //echo $commentpost[user_id] . PHP_EOL;
+                    //echo $commentpost[date_time] . PHP_EOL;
+                    //echo $commentpost[text] . PHP_EOL;
+                    
+                    $commentId = $_GET['id'];
+                    $commentpost = $showcomment->getComments($commentId);
+                    
+                   
+                    
+                    for ($i = 0; $i < sizeof($commentpost) + 1; $i++)
+                    {
+                        if($commentpost[$i][blog_id] == $commentId)
+                        {  
+                        echo "<table border=3 width=100%>";
+                            echo "<tr height=30>";
+                                echo "<td>"; 
+                                    echo $commentpost[$i][user_id];
+                                echo "</td>";
+                                echo "<td align=right>"; 
+                                    echo $commentpost[$i][date_time];
+                                echo "</td>";
+                            echo "</tr>";
+                    
+                            echo "<tr >";
+                                echo "<td colspan=2 align=justify>";
+                                    echo $commentpost[$i][text];
+                                echo "</td>";
+                            echo "</tr>";
+                         echo "</table>";
+                        }
+                    }
+                    
+                }
+                catch(Exception $e)
+                {
+                    return $e;
+                }
+        ?>
         
                 
 	</div>	
