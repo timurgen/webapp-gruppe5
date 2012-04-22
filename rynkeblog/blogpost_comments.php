@@ -90,7 +90,7 @@
                         <td>
                             <h2>
                                 <?php
-                                    echo $showpost->getName($_SESSION['userid']);
+                                    echo "<b>".$showpost->getName($_SESSION['userid'])."</b>";
                                 ?>
                             </h2>
                         </td>

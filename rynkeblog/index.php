@@ -31,7 +31,6 @@
 					<span style="font-size: 1.1em"><a href="http://www.hin.no">HIN</a></span>
 					<span style="font-size: 1.6em"><a href="http://www.Fremover.no">Fremover</a></span>
 					<span style="font-size: 1.5em"><a href="www.facebook.com">facebook</a></span>
-				
 				</p>
 			</div>
 			<p id="info">If you like my blog, Like it on facebook <a href="www.facebook.com" title="Information Architecture and Web Design">Facebook</a>!</p>
