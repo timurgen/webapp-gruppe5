@@ -21,7 +21,7 @@
             for ($i = $maxium; $i > -1; $i--)
             {
                 $blogpost = $showpost->getEntity($i);
-                
+                $postername = $showpost->getName($blogpost[author]);
                 echo "<div id=onepost>";
                 echo "<table border=0 width=100%>";
                     echo "<tr height=30>";
@@ -44,7 +44,7 @@
                             echo $blogpost[kategory];
                          echo "</td>";
                          echo "<td align=right>";
-                            echo "Author - " . $blogpost[author];
+                            echo "Author - " . $postername;
                          echo "</td>";
                     echo "</tr>"; 
                 echo "</table>";

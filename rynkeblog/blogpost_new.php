@@ -31,6 +31,7 @@
                 return $e;
             }     
   }
+  header("Location: index.php")
 ?>
       
   </body>

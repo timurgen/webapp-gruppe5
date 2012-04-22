@@ -143,6 +143,15 @@ class BlogEntityHandler{
         $max = $max[0];
         return $max;
     }
+    
+    public function getName($_id) 
+    {
+        $this->query = 'SELECT username FROM `user` WHERE `userid`='.$_id;
+        $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
+        $name = mysql_fetch_array($this->result, MYSQL_BOTH);
+        $name = $name[0];
+        return $name;
+    }
 }
 /////////////////TEST
 //$test = new BlogEntityHandler();
