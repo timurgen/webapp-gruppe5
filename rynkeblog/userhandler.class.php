@@ -36,7 +36,7 @@ class UserHandler{
      */
     public function sendPassword($_email) {
         include('config.php');
-        $this->email = $_email;
+        $this->email = mysql_escape_string($_email);
         //sjekker om bruker eksisterer i databasen
         $this->query = 'SELECT * FROM `user` WHERE username ="'.$this->username.'"';
         $this->result = mysql_query($this->query) or die('Opps something går weird: ' . mysql_error());
@@ -240,12 +240,25 @@ class UserHandler{
     }
     
     /**
-     *returnerer alle innlegg bruker har gjørt
+     *returnerer alle innlegg bruker har gjørt som an multidemensjonal array
      */
     public function getAllBlogEntities() {
-        //TODO skal returnere alle innlegg fra database
-        //get user id
-        //get alle innlegg merket med dette id
+        $result_array = array();
+        $counter = 0;
+        $this->query = "SELECT `userid` FROM `user` WHERE `username`='".$this->username."'";
+        //print $this->query;
+        $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
+        $this->result = mysql_fetch_row($this->result);
+        $this->query = "SELECT * FROM `blog_entity` WHERE `author`='".$this->result[0]."'";
+        $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
+        while(($innlegg = mysql_fetch_array($this->result)) != FALSE) {
+           $result_array[$counter] = $innlegg;
+           //print $result_array[$counter][4].PHP_EOL; //debugg
+           $counter += 1;
+        }
+        
+        return $result_array;
+        
     }
 
     /**
@@ -307,7 +320,7 @@ class UserHandler{
     }
 }
 /////////////////////TEST
-//$test = new UserHandler('test');
+$test = new UserHandler('test');
 //$test->sendPassword('timkinmail@gmail.com');
 //$test->changePassword("test222", "test222");
 //$test->autentificate('test222');
@@ -315,4 +328,5 @@ class UserHandler{
 //$test->getAllComments();
 //$test->checkIfUsernameExists('test2');
 //$test->checkIfEmailExists('timkinmail@gmail.com');
+$test->getAllBlogEntities();
 ?>
