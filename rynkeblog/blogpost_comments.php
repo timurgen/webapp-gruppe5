@@ -6,27 +6,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>
-      Blog
+      Comments
     </title>
     <meta http-equiv="Content-Type"
     content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection" />
+    
   </head>
   <body>
     <?php
-        require ('blogentityhandler.class.php');     
-        try
-        {    
-            $showpost = new BlogEntityHandler();
-            $maxium = $showpost->maxID();
-            for ($i = $maxium; $i > -1; $i--)
-            {
-                $blogpost = $showpost->getEntity($i);
+        include_once 'menu.php';
+        ?>
+        
+        <div class="wrap">
+		<div id="leftComments">
+		<h2></h2><br/>
+		<?php
+		require ('blogentityhandler.class.php');     
+        
+                try
+                {    
+                $showpost = new BlogEntityHandler();
+
+                $blogpost = $showpost->getEntity($_GET['id']);
                 $postername = $showpost->getName($blogpost[author]);
                 echo "<div id=onepost>";
                 echo "<table border=0 width=100%>";
                     echo "<tr height=30>";
                         echo "<td>"; 
-                            echo "<a href=blogpost_comments.php?id=$blogpost[id]>" . $blogpost[title] . "</a>";
+                            echo $blogpost[title];
                         echo "</td>";
                         echo "<td align=right>"; 
                             echo $blogpost[creation_date];
@@ -59,13 +67,48 @@
                 echo "</table>";
                 echo "</div>";
                 echo "</br>";         
-            }
+
         }
         catch(Exception $e){
             return $e;
         }
-       
-    ?>
+	?>
+                
+        <h3>Your comment</h3>
+            <form action="blogpost_new_comment.php" method="post">
+                <table border="0">
+                    <tr>
+                        <td width="150">
+                            Name
+                        </td>
+                        <td>
+                        <input type="text" name="name" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="150">
+                            Comment text
+                        </td>
+                        <td>
+                            <textarea name="tekst" cols="50" rows="5">
+                            </textarea>
+                        </td>
+                    </tr>    
+                    <tr>
+                        <td>
+                            <input type="submit" name="ny" value="Legg Inn" />
+                        </td>
+                        <td>
+                            <input type="reset" value="Blank ut" />
+                        </td>     
+                    </tr>
+            </table>
+        </form>
+        
+        
+                
+	</div>	
+        
      
   </body>
 </html>
