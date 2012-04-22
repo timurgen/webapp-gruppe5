@@ -155,7 +155,7 @@ class BlogEntityHandler{
     
     public function getComments($_id) {
         
-            $this->query = "SELECT * FROM `comments` WHERE `blog_id`=".$_id;
+            $this->query = "SELECT * FROM `comments` WHERE `blog_id`=".$_id." ORDER BY date_time";
             $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
             $final_result;
             $index = 0;
