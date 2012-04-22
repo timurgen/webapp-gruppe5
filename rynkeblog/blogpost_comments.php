@@ -1,5 +1,6 @@
 <?php
-  echo "<?xml version=\"1.0\"?>";
+    session_start();
+    echo "<?xml version=\"1.0\"?>";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -74,15 +75,24 @@
         }
 	?>
                 
+                
+        <?php
+        if(isset($_SESSION['userid'])) {
+        ?>
+                
         <h3>Your comment</h3>
             <form action="blogpost_new_comment.php" method="post">
                 <table border="0">
                     <tr>
                         <td width="150">
-                            Name
+                            Name : 
                         </td>
                         <td>
-                        <input type="text" name="name" />
+                            <h2>
+                                <?php
+                                    echo $showpost->getName($_SESSION['userid']);
+                                ?>
+                            </h2>
                         </td>
                     </tr>
                     <tr>
@@ -94,6 +104,14 @@
                             </textarea>
                         </td>
                     </tr>    
+                    
+                    <tr>
+                        <td>
+                            <input type="hidden" name="id" value=<?php echo $_GET['id'] ;?>>
+                            </input>
+                        </td>
+                    </tr>
+                    
                     <tr>
                         <td>
                             <input type="submit" name="ny" value="Legg Inn" />
@@ -104,6 +122,10 @@
                     </tr>
             </table>
         </form>
+        
+        <?php
+        }
+        ?>
         
         <?php
                 
