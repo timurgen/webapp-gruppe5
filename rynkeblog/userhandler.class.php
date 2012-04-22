@@ -23,7 +23,7 @@ class UserHandler{
      */
     function __construct($_username) {
         include('config.php');
-        $this->username = $_username;
+        $this->username = mysql_escape_string($_username);
         //$this->email = $_email;
         $this->dbconnection = mysql_connect($DB_SERVER, $DB_USER, $DB_PASS) or die('Connection error'.PHP_EOL.mysql_error().PHP_EOL);
         //print 'Connection to server OK'.PHP_EOL;
@@ -134,8 +134,8 @@ class UserHandler{
         //solim passord
         $pass= md5($pass.$SALT);
         //sql injection prevention
-        $name = mysql_real_escape_string($name);
-        $email = mysql_real_escape_string($email);
+        $name = mysql_escape_string($name);
+        $email = mysql_escape_string($email);
         $aktivationCode = $this->passCreater().$this->passCreater();
         //Her bruker vi engangspassordfelt i database for å lagre aktivasjonskode
         $this->query = 'INSERT INTO `user` (username, email, password, password_temporary, isBlocked) VALUES ("'.$name.'", "'.$email.'", "'.$pass.'", "'.$aktivationCode
@@ -150,6 +150,7 @@ class UserHandler{
     
     public function activate($code) {
          include('config.php');
+         $code = mysql_escape_string($code);
          $this->query = "SELECT * FROM `user` WHERE password_temporary='".$code."'";
          $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
          $this->result = mysql_fetch_array($this->result);
@@ -272,6 +273,7 @@ class UserHandler{
      * @param type $_username 
      */
     public function checkIfUsernameExists($_username) {
+        $_username = mysql_escape_string($_username);
         $this->query = "SELECT * FROM `user` WHERE `username`='".mysql_real_escape_string($_username)."'";
         $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
         if($this->result = mysql_fetch_array($this->result)) {
@@ -290,6 +292,7 @@ class UserHandler{
      * @throws Exception dersom epost adresse var tidligere registrert i databasen
      */
     public function checkIfEmailExists($_email) {
+        $_email = mysql_escape_string($_email);
         $this->query = "SELECT * FROM `user` WHERE `email`='".$_email."'";
         $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
         if($this->result = mysql_fetch_array($this->result)) {
@@ -320,7 +323,7 @@ class UserHandler{
     }
 }
 /////////////////////TEST
-$test = new UserHandler('test');
+//$test = new UserHandler('test');
 //$test->sendPassword('timkinmail@gmail.com');
 //$test->changePassword("test222", "test222");
 //$test->autentificate('test222');
@@ -328,5 +331,5 @@ $test = new UserHandler('test');
 //$test->getAllComments();
 //$test->checkIfUsernameExists('test2');
 //$test->checkIfEmailExists('timkinmail@gmail.com');
-$test->getAllBlogEntities();
+//$test->getAllBlogEntities();
 ?>

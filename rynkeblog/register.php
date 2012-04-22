@@ -23,6 +23,10 @@ elseif(isset($_POST['txtUserId']) & isset($_POST['txtEmail']) & isset($_POST['tx
     <body id="home">
         <?php include_once 'menu.php'; ?>
         <!--melding her-->
+        <div class="loginform">
+            Registration complete, mail with activation code was sent to your email.
+            <a href="activate.php">Go to activation page </a>
+        </div>
         
         
     </body>
