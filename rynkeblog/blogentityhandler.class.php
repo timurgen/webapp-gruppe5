@@ -178,6 +178,20 @@ class BlogEntityHandler{
         return $index;
     }
     
+   public function getAllTag() {//funker godt men må sjekke når vi vil ha mange innlegg med mange nøkkelord Timur
+        $this->query = 'SELECT tags FROM `blog_entity`';        
+        $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
+        $array;
+        $result_array;
+        $index = 0;
+        while($array = mysql_fetch_array($this->result)) {
+            $index++;
+            $result_array[$index] = $array;
+        }
+        mysql_free_result($this->result);
+        return $result_array;
+    } 
+    
 }
 
  
