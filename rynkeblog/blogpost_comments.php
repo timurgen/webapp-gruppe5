@@ -67,7 +67,32 @@
                     
                 echo "</table>";
                 echo "</div>";
-                echo "</br>";         
+                echo "</br>";
+                
+                if($blogpost[vedlegg]!=NULL)
+                {
+                    $fp = fopen('vedlegg.jpg', 'w');
+                    fwrite($fp, $blogpost[vedlegg]);
+                    fclose($fp);
+                    
+                    list($width) = getimagesize("vedlegg.jpg");
+                    
+                    //echo $width;
+                    
+                    echo "<div id=picture>";
+
+                        if($width > 835)
+                        {
+                            echo "<img src=vedlegg.jpg width=835>";
+                        }
+                        else
+                        {
+                            echo "<img src=vedlegg.jpg align=center>";
+                        }
+                        
+                    echo "</div>";
+                    echo "</br>";
+                }
 
         }
         catch(Exception $e){
