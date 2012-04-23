@@ -50,7 +50,17 @@
                 <input type="text" name="tags">
             </td>
         </tr>
-          
+        
+        <tr>
+            <td width="150">
+                <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                Choose a jpg to upload  
+            </td>
+            <td>
+                <input name="uploadedfile" type="file" /><br /> 
+            </td>
+        </tr>      
+            
         <tr>
           <td>
             <input type="submit" name="ny" value="Legg Inn" />
@@ -62,6 +72,9 @@
       </table>
     </form>
       </div>
+      
+      
+      
   </body>
 </html>
         
