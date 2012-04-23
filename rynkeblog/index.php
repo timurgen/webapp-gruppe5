@@ -23,11 +23,7 @@
 			<h2>Latest Entries</h2>
 			<ul>
 				<li><a href="blogpost_show.php">Lates post</a></li>
-                                <li>Januar 2012</li>
-                                <li>Februar 2012</li>
-                                <li>Mars 2012</li>
-                                <li>April 2012</li>
-                                <li>Juni 2012</li>
+                                
 				
 			</ul>
 			<div id="tagcloud">
@@ -44,11 +40,14 @@
                  <h2>Archive</h2>
                 <ul>
                     <li>
+                        
+                    </li>
+                    <li>
                         <?php
 			include('datetime.php');
                         
 			?>
-                                 
+                    </li>            
                 </ul>
                 
             </div>

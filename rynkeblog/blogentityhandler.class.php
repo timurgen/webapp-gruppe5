@@ -179,6 +179,10 @@ class BlogEntityHandler{
     }
     
 }
+
+ 
+
+    
 /////////////////TEST
 //$test = new BlogEntityHandler();
 //$test->addComment(1, 1, '23123123123123123123123123123123123123123123123123123123123');
