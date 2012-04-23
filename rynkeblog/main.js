@@ -58,6 +58,20 @@ function ajaxCheck(name, email) {//sender forespørsel fila check.php som return
     return xmlhttp.responseText;
 }
 
-function update() {
-    alert("Hui");
+function checkPass() {
+        var pass1 = document.getElementById("txtPassword").value;
+        var pass2 = document.getElementById("txtPassword2").value;
+        if(pass1 === pass2) {
+            if(pass1.length < 6) {
+                document.getElementById("errorMessage").innerHTML="min length is 6 signs";
+                return false;                
+            }
+            else {
+                return true;
+            }
+        }
+        else {
+            document.getElementById("errorMessage").innerHTML="passord er ikke like";
+            return false
+        }
 }

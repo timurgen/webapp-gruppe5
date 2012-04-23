@@ -23,7 +23,8 @@ class UserHandler{
      */
     function __construct($_username) {
         include('config.php');
-        $this->username = mysql_escape_string($_username);
+        $this->username = $_username;
+        //$this->username = mysql_escape_string($_username);
         //$this->email = $_email;
         $this->dbconnection = mysql_connect($DB_SERVER, $DB_USER, $DB_PASS) or die('Connection error'.PHP_EOL.mysql_error().PHP_EOL);
         //print 'Connection to server OK'.PHP_EOL;
@@ -89,6 +90,41 @@ class UserHandler{
         if(($this->result = mysql_fetch_array($this->result, MYSQLI_NUM)) != FALSE & $this->result[0] == $this->username & $this->result[2] == $this->old_password) {
             //user found, setter inn nytt passord
             $this->query = 'UPDATE `user` SET password="'.$this->new_password.'" WHERE username ="'.$this->username.'"';
+            mysql_query($this->query) or die(mysql_error());
+            //eventuelt sender brev til bruker med melding om nytt passord
+            return true;
+        }
+        else {
+            //user not fount kaster exception
+            mysql_close($this->dbconnection);
+            throw new Exception('User not found in database or password is invalid');
+        }
+    }
+    
+        /**
+     * funksjoner setter inn nytt passord til en bruker som har engangs passord
+     * @param $_old_password eksisterende passord
+     * @param $_new_password nytt passord
+     * @param $_engangspass - passord som var sendt tidligere til epost 
+     */
+    public function changePasswordIfLost($_engangspass, $_new_password) {
+        include('config.php');
+        $this->new_password = $_new_password;
+        //først sjekker at passord lang nok
+        if (strlen($this->new_password) < $PASS_MIN_LENGTH) {
+            throw new Exception('minimum length of password is '.$PASS_MIN_LENGTH);
+        }
+        $this->new_password = md5($this->new_password.$SALT);
+        $oneTimePass = md5($_engangspass.$SALT);
+        //lager forespørsel
+        $this->query = "SELECT * FROM `user` WHERE `password_temporary`='".$oneTimePass."'";
+        $this->result = mysql_query($this->query) or die('Opps something går weird: ' . mysql_error());
+        //ser etter brukeren i resultsvar
+        if(($this->result = mysql_fetch_array($this->result, MYSQLI_NUM))){ // != FALSE & $this->result[0] == $this->username & $this->result[2] == $this->old_password) {
+            //user found, setter inn nytt passord
+            $this->query = 'UPDATE `user` SET password="'.$this->new_password.'" WHERE `password_temporary` ="'.$oneTimePass.'"';
+            mysql_query($this->query) or die(mysql_error());
+            $this->query = 'UPDATE `user` SET password_temporary="" WHERE `password_temporary` ="'.$oneTimePass.'"';
             mysql_query($this->query) or die(mysql_error());
             //eventuelt sender brev til bruker med melding om nytt passord
             return true;
@@ -199,12 +235,15 @@ class UserHandler{
         //beregner hashverdi
         $password = md5($_password.$SALT);
         //ser etter bruker i database og sjekker at hash verdi til passord stemmer
-        $this->query = "SELECT * FROM `user` WHERE `username`='".$this->username."' AND `password`='".$password."'";
+        $this->query = "SELECT * FROM `user` WHERE `username`='".$this->username."' AND `password`='".$password."' OR `password_temporary`='".$password."'";
         $this->result = mysql_query($this->query) or die('Opps something går weird in autentificate function: ' . mysql_error());
-        if(($this->result = mysql_fetch_array($this->result)) != FALSE & $this->result[0] == $this->username & $this->result[2] == $password) {
+        if(($this->result = mysql_fetch_array($this->result)) != FALSE){// & $this->result[0] == $this->username & $this->result[2] == $password) {
             //sjekker om bruker er sperret
             if($this->result['isBlocked'] == 1) {
                 throw new Exception('Your profile is blocked, check your email if you have activation code or contact administrator');
+            }
+            if($password == $this->result['password_temporary']) {
+                throw new Exception('change password');
             }
             //user found, returnerer id
             return $this->result['userid'];

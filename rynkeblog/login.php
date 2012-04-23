@@ -24,6 +24,9 @@ else {
     catch(Exception $e) {
         //print "<font color=red><em>".$e->getMessage()."</em></font>";
         $errorMessage = $e->getMessage();
+        if($errorMessage === "change password") {
+            header("Location: changepass.php");
+        }
     }   
 }
 ?>
