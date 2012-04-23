@@ -67,3 +67,14 @@ $desc<br>
 
 
 ?>
+
+  <form action='search.php' method='GET'>
+         
+     <center>
+    <h2> Search </h2>
+    <input type='text' size='10' name='search'></br></br>
+    <input type='submit' name='submit' value='Search source code' ></br></br></br>
+    </center>
+    </form>
+
+	

@@ -40,7 +40,9 @@
                  <h2>Archive</h2>
                 <ul>
                     <li>
-                        
+                        <?php
+                        include('Search.php')
+                        ?>
                     </li>
                     <li>
                         <?php
