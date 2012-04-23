@@ -23,6 +23,11 @@
 			<h2>Latest Entries</h2>
 			<ul>
 				<li><a href="blogpost_show.php">Lates post</a></li>
+                                <li>Januar 2012</li>
+                                <li>Februar 2012</li>
+                                <li>Mars 2012</li>
+                                <li>April 2012</li>
+                                <li>Juni 2012</li>
 				
 			</ul>
 			<div id="tagcloud">
@@ -33,7 +38,7 @@
 					<span style="font-size: 1.5em"><a href="www.facebook.com">facebook</a></span>
 				</p>
 			</div>
-			<p id="info">If you like my blog, Like it on facebook <a href="www.facebook.com" title="Information Architecture and Web Design">Facebook</a>!</p>
+			<p id="info">put somthing here here <a href="www.facebook.com" title="Information Architecture and Web Design">Facebook</a>!</p>
 		</div>
 		<div id="footer">
 			<p><strong>Blog:</strong> <a href=".">Home</a> &middot; <a href="about.htm">About</a> &middot; <a href="links.htm">Links</a> &middot; <a href="task.htm">Task</a> &middot; <a href="#">Login</a> &middot; <a href="contact.htm">Contact</a></p>
