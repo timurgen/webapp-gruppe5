@@ -36,7 +36,7 @@
             <input type="text" name="username" /><br />
             <label>Tast inn email</label><br />
             <input type="text" name="email" /><br /><br />
-            <input type="submit" name="submitbtn"  value="Submit"/>
+            <input type="submit" name="submitbtn"  value="Send new password to email"/>
 
         </form>
     </div>

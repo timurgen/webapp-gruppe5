@@ -25,8 +25,9 @@ else {
     </head>
     <body id="home">
         <?php include_once 'menu.php'; ?>
-
+        
         <div class="loginform">
+            <H1>You need to change your password</H1>
         <p align="center"><strong><font color="#990000" id="errorMessage"></font></strong></p>
         <form action="changepass.php" method="post" name="frmChangePass" id="frmLogin" onsubmit="return checkPass()">
                    Brukernavn:<input name="txtUserName" type="text" id="txtUsername"><br/>   
