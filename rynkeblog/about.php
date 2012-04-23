@@ -13,15 +13,16 @@
                 
     
 		<h2>About the Blog</h2><br/><br/>
-                <div
+                <div>
                 This is a blog created for a school project in web-application course.
                 
                 Created by; Vitaly, Timur and Martin
                 </div>
+                <div>
+             
 			
    
-                
-			
+       		
 			
 </div>	
 		
