@@ -46,10 +46,9 @@
                     <li>
                         <?php
 			include('datetime.php');
-			?>
                         
-                    </li>
-                    
+			?>
+                                 
                 </ul>
                 
             </div>

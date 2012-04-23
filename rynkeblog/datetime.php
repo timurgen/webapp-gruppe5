@@ -40,5 +40,17 @@ function update() {
                  
              }
         ?>
+        
     </select>
+    
+     <input name="btnGo" type="submit" id="btngo" value="show"> <br />
+     
 </form>
+
+
+
+
+
+
+                        
+
