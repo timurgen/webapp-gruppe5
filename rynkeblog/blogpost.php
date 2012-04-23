@@ -21,7 +21,7 @@
     <h3>
      Skriv nytt inlegg
     </h3>
-    <form action="blogpost_new.php" method="post">
+    <form action="blogpost_new.php" method="post" enctype="multipart/form-data">
 	
       <table border="0">
         <tr>
@@ -53,7 +53,6 @@
         
         <tr>
             <td width="150">
-                <input type="hidden" name="MAX_FILE_SIZE" value="100000">
                 Choose a jpg to upload  
             </td>
             <td>

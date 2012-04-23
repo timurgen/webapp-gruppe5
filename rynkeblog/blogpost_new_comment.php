@@ -28,7 +28,7 @@
                 return $e;
             }     
   }
-  header("Location: blogpost.php")
+  header("Location: index.php")
 ?>
       
   </body>

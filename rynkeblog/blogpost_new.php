@@ -22,7 +22,27 @@
                 $object = new BlogEntityHandler();
                 //$object->addNewEntity($_username, $_titel, $_text, $_category, $_tags, $_payload);
                 //$object->addNewEntity(1, 'HardCodedTittel', 'TextForDummies', 'BlogTestingSystem', 'TestTag1, TestTag2', null);
-                $object->addNewEntity($_SESSION['userid'], $_POST['tittel'], $_POST['tekst'], 'testing', $_POST['tags'], $_POST['uploadedfile']);
+                
+                //$vedlegg = file_get_contents($_POST['uploadedfile']);
+                //echo $vedlegg;
+                //echo $_POST['uploadedfile'];
+                
+                //$fileName = $_FILES['uploadedfile']['name'];
+                $tmpName = $_FILES['uploadedfile']['tmp_name']; //filnavnet på tjenester
+                //$fileSize = $_FILES['uploadedfile']['size'];
+                
+                
+                $fp = fopen($tmpName, 'r');
+                $vedlegg = fread($fp, filesize($tmpName));
+                $vedlegg = addslashes($vedlegg);
+                fclose($fp);
+                
+                //echo $content;
+                //echo $fileName;
+                //echo $fileSize;
+                //echo $tmpName;
+                
+                $object->addNewEntity($_SESSION['userid'], $_POST['tittel'], $_POST['tekst'], 'testing', $_POST['tags'], $vedlegg);
 
             }
             catch(Exception $e)

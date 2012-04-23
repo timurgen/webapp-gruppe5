@@ -114,10 +114,10 @@
                     
                     <tr>
                         <td>
-                            <input type="submit" name="ny" value="Legg Inn" />
+                            <input type="submit" name="ny" value="Legg Inn" class="key blue"/>
                         </td>
                         <td>
-                            <input type="reset" value="Blank ut" />
+                            <input type="reset" value="Blank ut" class="key blue"/>
                         </td>     
                     </tr>
             </table>
