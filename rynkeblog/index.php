@@ -40,7 +40,7 @@
 			</div>
 			<p id="info">put somthing here here <a href="www.facebook.com" title="Information Architecture and Web Design">Facebook</a>!</p>
 		</div>
-            <div id ="right"
+            <div id ="right">
                  <h2>Archive</h2>
                 <ul>
                     <li>Somthing</li>
