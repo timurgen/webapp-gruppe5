@@ -12,13 +12,15 @@
 <div id="left">
 
 		<h2>About the Blog</h2><br/><br/>
-		<img border="0" src="../images/martin.png)"  width="304" height="228" /><br/>
+		
+                put info here. 
+                
 			
                 
                 
 			
-			<p><strong>Blog:</strong> <a href=".">Home</a>
-		</div>	
+			
+</div>	
 		
 		
 		

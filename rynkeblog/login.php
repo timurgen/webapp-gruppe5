@@ -45,8 +45,8 @@ else {
                    Username:<input name="txtUserId" type="text" id="txtUserId"><br/><br />                                   
                    Password: <input name="txtPassword" type="password" id="txtPassword"><br/>
                    <input name="btnLogin" type="submit" id="btnLogin" value="Login"> <br />
-                   <a href="register.php">Jeg er Umpa Lompa og vil bli registrert</a><br />
-                   <a href="lost_pass.php">Jeg er Umpa Lompa og glemte passord</a>
+                   <a href="register.php">Sign up</a><br />
+                   <a href="lost_pass.php">Forgot password?</a>
         </form>
         </div>
     </body>
