@@ -72,8 +72,8 @@ $desc<br>
          
      <center>
     <h2> Search </h2>
-    <input type='text' size='10' name='search'></br></br>
-    <input type='submit' name='submit' value='Search source code' ></br></br></br>
+    <input type='text' size='30' name='search'></br></br>
+    <input type='submit' name='submit' value='Search' ></br></br></br>
     </center>
     </form>
 
