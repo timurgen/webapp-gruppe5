@@ -9,19 +9,21 @@ include 'config.php';
 $button = $_GET ['submit'];
 $search = $_GET ['search']; 
 
-if(!$button)
-echo "you didn't submit a keyword";
-else
-{
-if(strlen($search)<=1)
-echo "Search term too short";
-else{
-echo "You searched for <b>$search</b> <hr size='1'></br>";
-mysql_connect("$DB_SERVER","$DB_USER","$DB_PASS");
+        if(!$button)
+            echo "you didn't submit a keyword";
+        else
+        {
+        if(strlen($search)<=1)
+           echo "Search term too short";
+        else{
+        echo "You searched for <b>$search</b> <hr size='1'></br>";
+        
+        
+        mysql_connect("$DB_SERVER","$DB_USER","$DB_PASS");
 
-mysql_select_db("$DB_NAME");
+        mysql_select_db("$DB_NAME");
 
-$search_exploded = explode (" ", $search);
+        $search_exploded = explode (" ", $search);
 
 foreach($search_exploded as $search_each)
 {
@@ -40,9 +42,7 @@ $foundnum = mysql_num_rows($run);
 
 if ($foundnum==0)
 echo "Sorry, there are no matching result for <b>$search</b>.</br></br>1. 
-Try more general words. for example: If you want to search 'how to create a website' 
-then use general keyword like 'create' 'website'</br>2. Try different words with similar
- meaning</br>3. Please check your spelling";
+ try agin";
 else
 {
 echo "$foundnum results found !<p>";
