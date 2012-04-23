@@ -49,14 +49,14 @@ echo "$foundnum results found !<p>";
 
 while($runrows = mysql_fetch_assoc($run))
 {
-$title = $runrows ['title'];
-$desc = $runrows ['description'];
-$url = $runrows ['url'];
+    $title = $runrows ['title'];
+    $desc = $runrows ['description'];
+    $url = $runrows ['url'];
 
 echo "
-<a href='$url'><b>$title</b></a><br>
-$desc<br>
-<a href='$url'>$url</a><p>
+    <a href='$url'><b>$title</b></a><br>
+    $desc<br>
+    <a href='$url'>$url</a><p>
 ";
 
 }
@@ -73,7 +73,7 @@ $desc<br>
      <center>
     <h2> Search </h2>
     <input type='text' size='30' name='search'></br></br>
-    <input type='submit' name='submit' value='Search' ></br></br></br>
+    <input type='submit' size='30' name='submit' value='Search' ></br></br></br>
     </center>
     </form>
 
