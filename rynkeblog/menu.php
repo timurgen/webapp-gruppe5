@@ -8,7 +8,7 @@
                         <li><a href="photo.php" accesskey="p"><span class="akey">P</span>hoto</a></li>
 			<li><a href="about.php" accesskey="a"><span class="akey">A</span>bout</a></li>
 			<li><a href="links.php" accesskey="m"><span class="akey">L</span>inks</a></li>
-			<!--li><a href="task.htm" accesskey="r"><span class="akey">T</span>ask</a></li-->
+			
                         <?PHP if($_SESSION['userid'] == null) { ?> 
 			<li><a href="login.php" accesskey="c"><span class="akey">L</span>ogin</a></li>
                         <?PHP } ?>
