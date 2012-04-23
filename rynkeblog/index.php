@@ -40,6 +40,16 @@
 			</div>
 			<p id="info">put somthing here here <a href="www.facebook.com" title="Information Architecture and Web Design">Facebook</a>!</p>
 		</div>
+            <div id ="right"
+                 <h2>Archive</h2>
+                <ul>
+                    <li>Somthing</li>
+                    
+                </ul>
+                
+            </div>
+
+                
 		<div id="footer">
 			<p><strong>Blog:</strong> <a href=".">Home</a> &middot; <a href="about.htm">About</a> &middot; <a href="links.htm">Links</a> &middot; <a href="task.htm">Task</a> &middot; <a href="#">Login</a> &middot; <a href="contact.htm">Contact</a></p>
 			<p><strong>Network:</strong> <a href="www.hin.no"HIN</a> &middot;  <a href="www.facebook.com">Facebook</a> &middot;  <a href="www.funn.no">Funn-IT</a> &middot;  <a href="www.Itslearning.com">Itslearning</a></p>
