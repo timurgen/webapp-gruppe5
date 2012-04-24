@@ -46,11 +46,6 @@
                 <ul>
                     <li>
                         <?php
-                        include('Search.php')
-                        ?>
-                    </li>
-                    <li>
-                        <?php
 			include('datetime.php');
                         
 			?>
