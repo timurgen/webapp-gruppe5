@@ -1,4 +1,5 @@
-<html>
+<html> 
+    
     <head>
         <title>Search blog entity</title>
         <meta name="OmpaLompa Crew" content="Ompalomåa megaBLOG">
@@ -14,7 +15,9 @@
         <?php
         include 'config.php';
         include 'blgpost_show.php';
-
+            
+        // Tutorial hentet fra designpalace.com PHP.
+        
         // Get the search variable from URL
         $var = @$_GET['q'];
         $trimmed = trim($var); //trim whitespace from the stored variable
