@@ -26,6 +26,8 @@
                                 <li><?php 
                                         include('tagcloud.php'); 
                                         ?></li>
+                                
+                                
 				
 			</ul>
 			<div id="tagcloud">
@@ -39,6 +41,17 @@
 					<span style="font-size: 1.5em"><a href="www.facebook.com">facebook</a></span> -->
 				</p>
 			</div>
+                        
+                        <h2>Test</h2>
+                        <ul>
+                                
+                            <li 
+                              <?php
+                               include 'search.php';
+                               ?>
+                        </ul>
+                            
+                  
 			<p id="info">put somthing here here <a href="www.facebook.com" title="Information Architecture and Web Design">Facebook</a>!</p>
 		</div>
             <div id ="right">

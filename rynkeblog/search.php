@@ -13,7 +13,7 @@
 
 <?php
 
-include 'blogentityhandler.class.php';
+include 'config.php';
 
   // Get the search variable from URL
   $var = @$_GET['q'] ;
