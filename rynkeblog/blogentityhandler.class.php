@@ -192,6 +192,8 @@ class BlogEntityHandler{
         return $result_array;
     } 
     
+    
+    
 }
 
  
