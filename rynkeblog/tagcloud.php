@@ -1,11 +1,28 @@
 <?php
-
+    session_start();  
+    echo "<?xml version=\"1.0\"?>";  
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+      Tagcloud PHP
+    </title>
+    <meta http-equiv="Content-Type"
+    content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <?php
+    
     //http://www.youtube.com/watch?v=p-2SiTsABxY
 
-    include ('blogentityhandler.class.php');
-    
+    //include ('blogentityhandler.class.php');//jeg vet ikke hvorfor tags virker utten det men det virker
+    //require ('blogentityhandler.class.php');
+    //echo "from body";
     try
     {
+        
         //Poluchaem dvumerniy massiv i perevodim ego v odnomerniy rabotaet
         $object = new BlogEntityHandler();
         $tagArrays = array();
@@ -43,7 +60,16 @@
         foreach ($tags as $tag => $size) 
         {
             $size += 5;
-            echo "<li><span style=\"font-size: {$size}px\">$tag</span></li> ";
+            
+            echo "<h3 style=\"font-size: {$size}px\">$tag</h3> ";
+             /*echo "<table border=2 width=200>";
+                 echo "<tr>";
+                        echo "<td>";  
+                            echo "<h3 style=\"font-size: {$size}px\">$tag</h3> ";
+                        echo "</td>";
+                echo "</tr>";
+             echo "</table>";*/
+            
         }
        //print_r($tags);
         
@@ -54,3 +80,6 @@
         return $e;
     }   
 ?>
+
+  </body>
+</html>    
