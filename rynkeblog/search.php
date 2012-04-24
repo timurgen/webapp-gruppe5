@@ -1,9 +1,9 @@
 <html>
     <head>
         <title>Search blog entity</title>
-        <meta name="author" content="Steve R, http://www.designplace.org/">
+        <meta name="OmpaLompa Crew" content="Ompalomåa megaBLOG">
     </head>
-    <!-- © http://www.designplace.org/ -->
+   
     <body>
 
         <form name="form" action="search.php" method="get">
