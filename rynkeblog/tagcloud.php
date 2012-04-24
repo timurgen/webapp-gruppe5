@@ -61,7 +61,9 @@
         {
             $size += 5;
             
-            echo "<h3 style=\"font-size: {$size}px\">$tag</h3> ";
+            //echo "<h3 style=\"font-size: {$size}px\">$tag</h3> ";
+            echo "<a href=blogpost_tags.php?tagtext=$tag style=\"font-size: {$size}px\">".$tag."</a>";
+            echo "<br \>";
              /*echo "<table border=2 width=200>";
                  echo "<tr>";
                         echo "<td>";  
