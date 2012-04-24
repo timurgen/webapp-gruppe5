@@ -10,12 +10,14 @@ margin-top:400px;
 
 div.add_blog {
     width: 50%;
-    border-style:solid;
-    border-width:5px;
+    border: 5px solid #3C5187;
     font: 100%/1.7em "Lucida Grande", "Lucida Sans Unicode", verdana, geneva, sans-serif; color:#black;
     padding: 10px;
     /*background: #fff url(../images/headerbg.gif) repeat-x;*/ 	
     margin-left:30%;
     margin-top:10%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px 10px 10px 10px;
 }
 

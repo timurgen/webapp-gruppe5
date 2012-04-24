@@ -42,7 +42,7 @@
                 //echo $fileSize;
                 //echo $tmpName;
                 
-                $object->addNewEntity($_SESSION['userid'], $_POST['tittel'], $_POST['tekst'], 'testing', $_POST['tags'], $vedlegg);
+                $object->addNewEntity($_SESSION['userid'], $_POST['tittel'], $_POST['tekst'], $_POST['kategory'], $_POST['tags'], $vedlegg);
 
             }
             catch(Exception $e)

@@ -30,7 +30,7 @@
         $tagArrays = $object->getAllTag();
         $tagArraysOnes = array();
         
-        for ($i=1; $i < sizeof($tagArrays); $i++)
+        for ($i=1; $i < sizeof($tagArrays) + 1; $i++)
         {
             $tagArraysOnes[$i] = $tagArrays[$i][0];
         }

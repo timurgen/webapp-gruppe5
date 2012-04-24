@@ -47,7 +47,22 @@
                 Tags
             </td>
             <td>
-                <input type="text" name="tags">
+                <input type="text" name="tags" />
+            </td>   
+        </tr>
+         
+        <tr>
+            <td width="150">
+                Category
+            </td>
+            <td>
+                <select name="kategory" size="1">
+                    <option value="Testing">Testing</option>
+                    <option value="News">News</option>
+                    <option value="Umpa Lompa">Umpa Lompa</option>
+                    <option value="Sport">Sport</option>
+                    <option value="MTG">MTG</option>
+                </select>
             </td>
         </tr>
         
