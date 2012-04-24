@@ -20,44 +20,43 @@
         
         // Get the search variable from URL
         $var = @$_GET['q'];
-        $trimmed = trim($var); //trim whitespace from the stored variable
-// rows to return
+        
+        $search = trim($var); 
+        
+        // rows to return
         $limit = 50;
 
-// check for an empty string and display a message.
-        if ($trimmed == "") {
+        // check for an empty string and display a message.
+        if ($search == "") {
             echo "<p>Please enter a search...</p>";
             exit;
         }
 
-// check for a search parameter
+       // check for a search parameter
         if (!isset($var)) {
             echo "<p>We dont seem to have a search parameter!</p>";
             exit;
         }
 
-//connect to your database ** EDIT REQUIRED HERE **
+        //connect to your database ** EDIT REQUIRED HERE **
         mysql_connect("$DB_SERVER", "$DB_USER", "$DB_PASS"); //(host, username, password)
-//specify database ** EDIT REQUIRED HERE **
+        //specify database ** EDIT REQUIRED HERE **
         mysql_select_db("$DB_NAME") or die("$DB_NAME"); //select which database we're using
-// Build SQL Query  
-        $query = "select * from blog_entity where text like \"%$trimmed%\" or title like \"%$trimmed%\"  
-  order by text";
+        // Build SQL Query  
+        $query = "select * from blog_entity where text like \"%$search%\" order by text";
 
         $numresults = mysql_query($query);
         $numrows = mysql_num_rows($numresults);
 
-// if no result , try search on google.
+        // if no result , Google IT!
 
         if ($numrows == 0) {
             echo "<h4>Results</h4>";
-            echo "<p>Sorry, your search: &quot;" . $trimmed . "&quot; returned 0 results</p>";
+            echo "<p>Sorry, your search: &quot;" . $search . "&quot; returned 0 results</p>";
 
 // google
-            echo "<p><a href=\"http://www.google.com/search?q="
-            . $trimmed . "\" target=\"_blank\" title=\"Look up 
-  " . $trimmed . " on Google\">Click here</a> to try the 
-  search on google</p>";
+            echo "<p><a href=\"http://www.google.com/search?q=". $search. "\" target=\"_blank\" title=\"Look up 
+                 " . $search . " on Google\">Click here</a> Google IT!</p>";
         }
 
         // next determine if s has been passed to script, if not use 0
@@ -80,11 +79,22 @@
 
         // now you can display the results returned
         while ($row = mysql_fetch_array($result)) {
-            $title = $row["text"];
+            $text = $row["text"];
             
-            echo $title;
+            //echo $text;
             //"$count.)&nbsp;$title";
             //$count++;
+             echo "<div id=search>";
+                  echo "<table border=0 width=100%>";
+                  echo "<tr height=30>";              
+                  echo "<td>";
+                  echo $text;
+                  
+                  //MÅ GJØRES FERDIG
+                  
+            
+            echo "</div>";
+                    
         }
 
         $currPage = (($s / $limit) + 1);

@@ -36,8 +36,9 @@
 					<span style="font-size: 1.6em"><a href="http://www.Fremover.no">Fremover</a></span>
 					<span style="font-size: 1.5em"><a href="www.facebook.com">facebook</a></span> -->
                          <?php
-                               include 'search.php';
-                               ?>
+                              include 'search.php';
+                                                   
+                         ?>
 			</div>
 		</div>         
             
