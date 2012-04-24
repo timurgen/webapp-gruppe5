@@ -119,4 +119,12 @@ h1 a:hover { color: #FFFCB3; }
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078c5', endColorstr='#00cdee');
 }
 
+#tagcloud {
+    border: 1px solid #F33BB5;
+    padding: 3px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
 

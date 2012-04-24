@@ -23,14 +23,15 @@
 		<div id="right">
 			<h2>Latest Entries</h2>
 			<ul>
-				<li><a href="blogpost_show.php">Lates post</a></li>			
-
-                                
+				<li><a href="blogpost_show.php">Lates post</a></li>			       
 			</ul>
-
+                        
+                        <h2>Tags Cloud</h2>
+                        <div id="tagcloud">
 					<?php
                                         include("tagcloud.php"); 
                                         ?>
+                        </div>
                                         <!--<span style="font-size: 1.3em"><a href="www.google.no">google</a></span>
 					<span style="font-size: 1.1em"><a href="http://www.hin.no">HIN</a></span>
 					<span style="font-size: 1.6em"><a href="http://www.Fremover.no">Fremover</a></span>

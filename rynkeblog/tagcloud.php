@@ -59,7 +59,10 @@
         
         foreach ($tags as $tag => $size) 
         {
-            $size += 5;
+            $size += 10;
+            
+            if($size > 30)
+                {$size = 30;}
             
             //echo "<h3 style=\"font-size: {$size}px\">$tag</h3> ";
             echo "<a href=blogpost_tags.php?tagtext=$tag style=\"font-size: {$size}px\">".$tag."</a>";

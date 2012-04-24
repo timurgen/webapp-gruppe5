@@ -17,6 +17,8 @@
         try
         {    
             $showpost = new BlogEntityHandler();
+            
+            
             $maxium = $showpost->maxID();
             for ($i = $maxium; $i > -1; $i--)
             {

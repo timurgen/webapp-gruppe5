@@ -27,8 +27,7 @@
                 require ('blogentityhandler.class.php');     
                 
                 try
-                {   
-                   
+                {     
                 $showpost = new BlogEntityHandler();
                 $blogpost = $showpost->getEntitiesByTag($_GET['tagtext']);
                 $size = count($blogpost);
@@ -81,18 +80,14 @@
                 echo "</div>";
                 echo "</br>";
                 }
-                
-     
-
         }
         catch(Exception $e){
             return $e;
         }
 	?>
-                
-                
-        
+                        
 	</div>	
+        </div>
         
      
   </body>
