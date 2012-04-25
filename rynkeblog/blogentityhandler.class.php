@@ -80,6 +80,30 @@ class BlogEntityHandler{
         mysql_free_result($this->result);
         return $result_array;
     }
+
+    
+    
+    
+        /**
+     *
+     * @param type $_word String med nøkkelord
+     * @return type array av id'er til innlegg somm inneholder nøkkelord
+     */
+    public function getEntitiesBySearchWord($_word) {
+        $this->query = 'SELECT * FROM `blog_entity` WHERE `text` LIKE "%'.$_word.'%"';
+        $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
+        $array;
+        $result_array;
+        $index = 0;
+        while($array = mysql_fetch_array($this->result)) {
+            $index++;
+            $result_array[$index] = $array;
+            print $result_array[$index]['text'].PHP_EOL;
+        }
+        mysql_free_result($this->result);
+        return $result_array;
+    }
+
     
     public function getPostByM($_year){
         
@@ -224,5 +248,6 @@ class BlogEntityHandler{
 //$test->getEntity(1);
 //$test->getEntitiesByTag('test');
 //$test->addNewEntity(1, 'Test 3', 'Arcenal Chelsea', 'test', 'tag1, tag 2', null);
+//$test->getEntitiesBySearchWord('pingv');
 
 ?>
