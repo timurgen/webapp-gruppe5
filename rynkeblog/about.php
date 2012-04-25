@@ -14,7 +14,7 @@
     require ('blogentityhandler.class.php');?>
 
     <div class="wrap">
-        <div id="left">
+        <div id="total">
             <br />
             <div id="about">        
     

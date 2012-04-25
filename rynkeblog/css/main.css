@@ -45,6 +45,8 @@ h1 a:hover { color: #FFFCB3; }
 	#tagcloud a:hover { background: #E7FEE5; color: #007898; }
 	
 	#info { border: 1px solid #ccc; padding: 3px 5px; margin: 0 0 10px; }
+        
+#total { float: left; width: 800px; margin: 0 0 20px 0; }        
 
 #footer { clear: both; border-top: 1px solid #ccc; padding: 20px 0; color:#808080; }
 #footer p { line-height: 2.5em; } 
