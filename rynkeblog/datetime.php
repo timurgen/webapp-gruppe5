@@ -43,15 +43,16 @@ function update() {
              }
               include ('BlogEntityHandler.class.php');
       
-  
+              
+              
              
         ?>
         
     </select>
-    
-     <input name="btnGo" type="submit" id="btngo" value="show"> <br />
-    
      
+    
+    
+    
      
     
 </form>
