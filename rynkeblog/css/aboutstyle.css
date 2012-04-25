@@ -11,5 +11,53 @@ margin-top:120px;
 	#left h2 { float: left; font: 2.1em "Trebuchet MS", Arial; background: url(../images/h2bg.gif) repeat-x bottom; color:#121212; letter-spacing:-1px; margin: 0px 0 20px 0; clear:left; }
 	#left h2 a { color:#121212; text-decoration:none; border: 0; }
 	#left p { clear: both; margin: 5px 0 20px 0; font-size:110%; line-height:21px; }
+        
+#about {
+    border: 3px solid #50DCBE;
+    padding: 3px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px 15px 15px 15px;
+    -webkit-box-shadow: 7px 7px 7px #40310a; 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#40310a,direction=125,strength=7)";
+    box-shadow: 7px 7px 7px #40310a;
+    
+    -moz-transition: all 3s ease-out;
+    -o-transition: all 3s ease-out;
+    -webkit-transition: all 3s ease-out;
+    cursor: pointer; 
+}
+
+#about:hover{
+    background-color: #97CE68;
+    color: #000;
+    -webkit-transform: scale(10);
+    -moz-transform: scale(10); 
+    -o-transform: scale(10);
+}
+
+#links {
+    margin-bottom: 5px;
+    background-color: #ccc;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    height:100px;
+    
+    text-indent: 0px;
+    border: 1px solid #888;
+    -moz-transition: all 3s ease-out;
+    -o-transition: all 3s ease-out;
+    -webkit-transition: all 3s ease-out;
+    cursor: pointer;}
+  
+#links:hover {
+    background-color: #97CE68;
+    color: #000;
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2); 
+    -o-transform: scale(2);
+}
 
 	

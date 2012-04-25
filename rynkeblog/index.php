@@ -14,7 +14,7 @@
 		<h2></h2><br/>
 			<?php
 			include('blogpost_show.php');
-                        //include("tagcloud.php");
+                        
 			if(isset($_SESSION['basic_is_logged_in'])){
 				include('blogpost.php'); 
 			}
@@ -44,7 +44,9 @@
                            </ul>
                                        
                          <?php
+                            
                               include 'search.php';                                 
+                             
                          ?>
 			</div>
 		

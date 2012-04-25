@@ -56,6 +56,9 @@ h1 a:hover { color: #FFFCB3; }
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px 15px 15px 15px;
+    -webkit-box-shadow: 5px 5px 5px #40310a; 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#40310a,direction=125,strength=5)";
+    box-shadow: 5px 5px 5px #40310a;
 }
 
 #picture{
@@ -78,7 +81,10 @@ h1 a:hover { color: #FFFCB3; }
     background: #9BC9DF;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    border-radius: 10px 10px 10px 10px;          
+    border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 10px 10px 10px #40310a; 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#40310a,direction=125,strength=10)";
+    box-shadow: 10px 10px 10px #40310a;
 }
 
 .key {
@@ -125,6 +131,9 @@ h1 a:hover { color: #FFFCB3; }
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 7px 7px 7px #40310a; 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#40310a,direction=125,strength=7)";
+    box-shadow: 7px 7px 7px #40310a;
 }
 
 

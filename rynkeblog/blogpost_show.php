@@ -50,10 +50,12 @@
                     echo "</br>";         
                 }
             }
-                catch(Exception $e){
+            catch(Exception $e)
+            {
             return $e;
-        }
-        }
+            }
+        }//end of isset
+        
         else {
         try
             {    
