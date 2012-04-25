@@ -56,9 +56,9 @@
 
                 
 		<div id="footer">
-			<p><strong>Blog:</strong> <a href=".">Home</a> &middot; <a href="about.htm">About</a> &middot; <a href="links.htm">Links</a> &middot; <a href="task.htm">Task</a> &middot; <a href="#">Login</a> &middot; <a href="contact.htm">Contact</a></p>
-			<p><strong>Network:</strong> <a href="www.hin.no"HIN</a> &middot;  <a href="www.facebook.com">Facebook</a> &middot;  <a href="www.funn.no">Funn-IT</a> &middot;  <a href="www.Itslearning.com">Itslearning</a></p>
-			<p>Design: Martin Bang Tollefsen(w3chool for CSS info, <a title="www.w3schools.com" href="www.w3schools.com">w3s</a></p>
+			<p><strong>Blog:</strong> <a href=".">Home</a> &middot; <a href="about.htm">About</a> &middot; <a href="links.htm">Links</a> &middot; <a href="#">Login</a> &middot; <a href="contact.htm">Contact</a></p>
+			<p><strong>Network:</strong> <a href="http://www.hin.no"HIN</a> &middot;  <a href="http://www.facebook.com">Facebook</a> &middot;  <a href="http://www.funn.no">Funn-IT</a> &middot;  <a href="http://www.Itslearning.com">Itslearning</a></p>
+			<p>Design: Martin Bang Tollefsen(w3chool for CSS info, <a title="www.w3schools.com" href="http://www.w3schools.com">w3s</a></p>
 		</div>
 </body>
 </html>

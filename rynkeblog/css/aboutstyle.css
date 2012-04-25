@@ -21,19 +21,6 @@ margin-top:120px;
     -webkit-box-shadow: 7px 7px 7px #40310a; 
     -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#40310a,direction=125,strength=7)";
     box-shadow: 7px 7px 7px #40310a;
-    
-    -moz-transition: all 3s ease-out;
-    -o-transition: all 3s ease-out;
-    -webkit-transition: all 3s ease-out;
-    cursor: pointer; 
-}
-
-#about:hover{
-    background-color: #97CE68;
-    color: #000;
-    -webkit-transform: scale(10);
-    -moz-transform: scale(10); 
-    -o-transform: scale(10);
 }
 
 #links {

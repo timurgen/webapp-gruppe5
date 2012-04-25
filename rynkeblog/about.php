@@ -16,25 +16,14 @@
     <div class="wrap">
         <div id="total">
             <br />
+            <br />
             <div id="about">        
     
 		<h2>About the Blog</h2><br/><br/>
-                    
                     This is a blog created for a school project in web-application course.
-                
-                Created by; Vitaly, Timur and Martin
+                    Created by; Vitaly, Timur and Martin
             </div>
             <br />
-            
-            <div id="about">        
-    
-		<h2>About the Blog</h2><br/><br/>
-                    
-                    This is a blog created for a school project in web-application course.
-                
-                Created by; Vitaly, Timur and Martin
-            </div>
-            
         </div>
         
     </div>
