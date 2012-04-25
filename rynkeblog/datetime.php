@@ -29,6 +29,8 @@ function update() {
     </select>
     <select name="year">
         <?PHP
+       
+        
             $year = date('Y');
              for($i = ($year - 5); $i < $year+1; $i++){
                  if($i == $year) {
@@ -39,13 +41,19 @@ function update() {
                  }
                  
              }
+              include ('BlogEntityHandler.class.php');
+      
+  
+             
         ?>
         
     </select>
     
      <input name="btnGo" type="submit" id="btngo" value="show"> <br />
+    
      
      
+    
 </form>
 
 

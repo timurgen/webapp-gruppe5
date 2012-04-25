@@ -32,22 +32,29 @@
                                         include("tagcloud.php"); 
                                         ?>
                         </div>
-                                        <!--<span style="font-size: 1.3em"><a href="www.google.no">google</a></span>
-					<span style="font-size: 1.1em"><a href="http://www.hin.no">HIN</a></span>
-					<span style="font-size: 1.6em"><a href="http://www.Fremover.no">Fremover</a></span>
-					<span style="font-size: 1.5em"><a href="www.facebook.com">facebook</a></span> -->
+                        
+                        <h2>Archive</h2>
+                            <ul>
+                               <li>
+                                  <?php
+                                    // echo "Before time";
+                                    include('datetime.php');
+			          ?>
+                               </li>            
+                           </ul>
+                                       
                          <?php
                               include 'search.php';                                 
                          ?>
 			</div>
 		
-            <div id ="right">
+                <div id ="right">
                 
                     <h2>Archive</h2>
                     <ul>
                     <li>
                         <?php
-                        echo "Before time";
+                       // echo "Before time";
 			include('datetime.php');
 			?>
                     </li>            

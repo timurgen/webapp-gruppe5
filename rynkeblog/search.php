@@ -3,6 +3,7 @@
     <head>
         <title>Search blog entity</title>
         <meta name="OmpaLompa Crew" content="Ompalomåa megaBLOG">
+        <link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection" />
     </head>
    
     <body>
@@ -44,6 +45,7 @@
         mysql_select_db("$DB_NAME") or die("$DB_NAME"); //select which database we're using
         // Build SQL Query  
         $query = "select * from blog_entity where text like \"%$search%\" order by text";
+       
 
         $numresults = mysql_query($query);
         $numrows = mysql_num_rows($numresults);
@@ -85,7 +87,7 @@
             //echo $text;
             //"$count.)&nbsp;$title";
             //$count++;
-             echo "<div id=search>";
+             echo "<div id=onepost>";
                   echo "<table border=0 width=100%>";
                   echo "<tr height=30>";              
                   echo "<td>";
@@ -102,7 +104,7 @@
                     
                     echo "<tr >";
                         echo "<td colspan=2 align=justify>";
-                            echo $blogpost[text];
+                            echo $blogpost[$text];
                         echo "</td>";
                     echo "</tr>";
                     
