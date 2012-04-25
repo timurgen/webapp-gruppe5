@@ -1,4 +1,5 @@
 <?php
+
 class hilsen {
         private $tittel;
         private $tekst;

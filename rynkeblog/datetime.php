@@ -41,21 +41,20 @@ function update() {
                  }
                  
              }
-              include ('BlogEntityHandler.class.php');
-      
-              
-              
-             
         ?>
-        
+          
+
     </select>
-     
-    
-    
-    
-     
-    
 </form>
+
+ 
+      
+
+
+
+
+           
+ 
 
 
 
