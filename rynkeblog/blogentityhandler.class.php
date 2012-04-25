@@ -104,9 +104,10 @@ class BlogEntityHandler{
     }
 
     
-    public function getPostByM($_year){
+    public function getPostByM($month,$_year){
         
-        $this->query = 'SELECT * FROM `blog_entity` WHERE `creation_date` LIKE "%'.$_year.'%"';
+        //$this->query = 'SELECT * FROM `blog_entity` WHERE `creation_date` LIKE "%'.$_year.'%"';
+        $this->query = "select * from blog_entity where month(creation_date)=".$month." and year(creation_date)=".$_year."";
         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
         
         $array;
@@ -116,8 +117,10 @@ class BlogEntityHandler{
             
             $index++;
             $result_array[$index] = $array;
-            
+            echo "dd";
         }
+        
+        echo "ddrr";
         mysql_free_result($this->result);
         return $result_array;
     }
@@ -234,4 +237,5 @@ class BlogEntityHandler{
         return $result_array;
     } 
 }
+
 ?>

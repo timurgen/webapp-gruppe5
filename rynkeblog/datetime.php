@@ -6,29 +6,29 @@
 ?>
 <script type="text/javascript">
 function update() {
-    
+
 }
 </script>
 
-
-<form name="calendar" onchange="update()">
+  <?php 
+        
+   echo " <form name=\"calendar\"  action=\"datetime.php\" method =\"get\">
     Vis innlegg for:
-    <select name="month">
-        <option value="January">January</option>
-        <option value="February">February</option>
-        <option value="March">March</option>
-        <option value="April">April</option>
-        <option value="May">May</option>
-        <option value="Juny">Juny</option>
-        <option value="July">July</option>
-        <option value="August">August</option>
-        <option value="September">September</option>
-        <option value="October">October</option>
-        <option value="November">November</option>
-        <option value="Desember">Desember</option>
+    <select name=\"month\">
+        <option value=\"1\">January</option>
+        <option value=\"2\">February</option>
+        <option value=\"3\">March</option>
+        <option value=\"4\">April</option>
+        <option value=\"5\">May</option>
+        <option value=\"6\">Juny</option>
+        <option value=\"7\">July</option>
+        <option value=\"8\">August</option>
+        <option value=\"9\">September</option>
+        <option value=\"10\">October</option>
+        <option value=\"11\">November</option>
+        <option value=\"12\">Desember</option>
     </select>
-    <select name="year">
-        <?PHP
+    <select name=\"year\">";
        
         
             $year = date('Y');
@@ -41,11 +41,30 @@ function update() {
                  }
                  
              }
-        ?>
-          
-
+             
+        echo "<input type=\"submit\" name=\"go\" value=\"go\"/>
+        
+      
     </select>
-</form>
+</form>";
+  
+        if(isset($_POST["go"]))
+        {   
+            require("blogentityhandler.class");
+            $month = $_GET["month"];
+            $year = $_GET["year"];
+            
+            $blogDatabase = new BlogEntityHandler();
+            
+            $blogger = $blogDatabase->getPostByM($month, $_year);
+            
+            echo $blogger;
+        }else
+        {
+            echo "ssssssss";
+        }
+        
+?>
 
  
       
