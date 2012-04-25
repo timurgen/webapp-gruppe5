@@ -1,8 +1,8 @@
 <?php session_start() ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 <head>
-	<meta name="author" content="Martin Bang Tollefsen" />
+	<meta name="author" content="Gruppe 5" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection" />
 	<title>Ompa Lompa MegaBlog</title>

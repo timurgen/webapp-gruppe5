@@ -109,7 +109,7 @@ class BlogEntityHandler{
         $this->query = 'SELECT * FROM `blog_entity` WHERE `creation_date` LIKE "%'.$_year.'%"';
         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
         
-        /*$array;
+        $array;
         $result_array;
         $index = 0;
         while($array =  mysql_fetch_array($this->result)){
@@ -117,7 +117,7 @@ class BlogEntityHandler{
             $index++;
             $result_array[$index] = $array;
             
-        }*/
+        }
         mysql_free_result($this->result);
         return $result_array;
     }
