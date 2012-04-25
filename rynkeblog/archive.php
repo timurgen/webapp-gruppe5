@@ -1,4 +1,4 @@
-    <?php
+ <?php
     session_start();  
     //http://www.youtube.com/watch?v=p-2SiTsABxY
 
@@ -13,7 +13,7 @@
         $object = new BlogEntityHandler();
         $tagArrays = array();
         
-        $tagArrays = $object->getAllTag();
+        $tagArrays = $object->getSomthing();
         $tagArraysOnes = array();
         
         for ($i=1; $i < sizeof($tagArrays) + 1; $i++)

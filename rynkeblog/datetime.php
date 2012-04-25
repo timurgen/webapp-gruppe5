@@ -48,17 +48,19 @@ function update() {
     </select>
 </form>";
   
-        if(isset($_POST["go"]))
+        if(isset($_GET["month"])&&isset($_GET["year"]))
         {   
-            require("blogentityhandler.class");
+           
             $month = $_GET["month"];
             $year = $_GET["year"];
             
+            echo "shit";
+             require("blogentityhandler.class.php");
             $blogDatabase = new BlogEntityHandler();
             
             $blogger = $blogDatabase->getPostByM($month, $_year);
+             
             
-            echo $blogger;
         }else
         {
             echo "ssssssss";

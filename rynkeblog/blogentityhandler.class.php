@@ -109,15 +109,16 @@ class BlogEntityHandler{
         //$this->query = 'SELECT * FROM `blog_entity` WHERE `creation_date` LIKE "%'.$_year.'%"';
         $this->query = "select * from blog_entity where month(creation_date)=".$month." and year(creation_date)=".$_year."";
         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
-        
+        echo "øøødd";
         $array;
-        $result_array;
+        $result_array = array();
         $index = 0;
         while($array =  mysql_fetch_array($this->result)){
             
-            $index++;
+           
             $result_array[$index] = $array;
-            echo "dd";
+             $index++;
+            
         }
         
         echo "ddrr";
@@ -236,6 +237,23 @@ class BlogEntityHandler{
         mysql_free_result($this->result);
         return $result_array;
     } 
+    
+    public function getSomthing(){
+        
+        $this->query = 'SELECT creation_date FROM `blog_entity`';        
+        $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
+        
+         $array;
+        $result_array;
+        $index = 0;
+        while($array = mysql_fetch_array($this->result)) {
+            $index++;
+            $result_array[$index] = $array;
+        }
+        mysql_free_result($this->result);
+        return $result_array;
+        
+    }
 }
 
 ?>
