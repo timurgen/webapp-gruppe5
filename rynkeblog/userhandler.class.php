@@ -23,7 +23,7 @@ class UserHandler{
      */
     function __construct($_username) {
         include('config.php');
-        $this->username = $_username;
+        $this->username = mysql_escape_string($_username);
         //$this->username = mysql_escape_string($_username);
         //$this->email = $_email;
         $this->dbconnection = mysql_connect($DB_SERVER, $DB_USER, $DB_PASS) or die('Connection error'.PHP_EOL.mysql_error().PHP_EOL);

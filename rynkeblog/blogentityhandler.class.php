@@ -98,7 +98,6 @@ class BlogEntityHandler{
         while($array = mysql_fetch_array($this->result)) {
             $index++;
             $result_array[$index] = $array;
-            print $result_array[$index]['text'].PHP_EOL;
         }
         mysql_free_result($this->result);
         return $result_array;

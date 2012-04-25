@@ -7,8 +7,8 @@
                 $result = $showpost->getEntitiesBySearchWord($_POST['search']);
                 for ($i = count($result); $i > -1; $i--)
                 {
-                    $blogpost = $showpost->getEntity($i);
-                    $postername = $showpost->getName($blogpost[author]);
+                    $blogpost = $result[$i];
+                    $postername = $showpost->getName($blogpost['author' ]);
                     $numComments = $showpost->getNumberComments($i);
                     echo "<div id=onepost>";
                     echo "<table border=0 width=100%>";
