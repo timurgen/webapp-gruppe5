@@ -81,6 +81,7 @@
         while ($row = mysql_fetch_array($result)) {
             $text = $row["text"];
             
+            
             //echo $text;
             //"$count.)&nbsp;$title";
             //$count++;
@@ -88,7 +89,44 @@
                   echo "<table border=0 width=100%>";
                   echo "<tr height=30>";              
                   echo "<td>";
-                  echo $text;
+                  echo $text;              
+                  echo "</td>";
+                   echo "<td align=right>"; 
+                            echo $blogpost;
+                        echo "</td>";
+                        
+                           echo "<td align=right>"; 
+                            echo $blogpost[creation_date];
+                        echo "</td>";
+                    echo "</tr>";
+                    
+                    echo "<tr >";
+                        echo "<td colspan=2 align=justify>";
+                            echo $blogpost[text];
+                        echo "</td>";
+                    echo "</tr>";
+                    
+                    echo "<tr height=30>";
+                         echo "<td align=left>";
+                            echo $blogpost[kategory];
+                         echo "</td>";
+                         echo "<td align=right>";
+                            echo "Author - " . $postername;
+                         echo "</td>";
+                    echo "</tr>";
+                    
+                    
+                    echo "<tr height=30>";
+                        echo "<td colspan=2 align=left>";
+                            echo "<hr />";
+                            echo $blogpost[tags];
+                        echo "</td>";
+                    echo "</tr>";
+                    
+                echo "</table>";
+                echo "</div>";
+                echo "<a href=blogpost_comments.php?id=$blogpost[id]>" . "<h3>$numComments Comments</h3>" . "</a>";
+                echo "</br>"; 
                   
                   //MÅ GJØRES FERDIG
                   
