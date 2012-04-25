@@ -49,20 +49,7 @@
                              
                          ?>
 			</div>
-		
-                <div id ="right">
-                
-                    <h2>Archive</h2>
-                    <ul>
-                    <li>
-                        <?php
-                       // echo "Before time";
-			include('datetime.php');
-			?>
-                    </li>            
-                </ul>
-                
-            </div>
+
         </div>         
             
              
