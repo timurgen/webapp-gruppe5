@@ -28,7 +28,7 @@
                                 <p>
                                 <a href="http://www.facebook.com/vitalys">Facebook</a> Link to Vitaly Facebook site
                                 </p>
-                            <h3>Tiumr</h3>
+                            <h3>Timur</h3>
                                 <p>
                                 <a href="http://www.facebook.com/timur.samkharadze">Facebook</a> Link to Timur Facebook site
                                 </p>
