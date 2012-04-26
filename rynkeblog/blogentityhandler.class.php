@@ -240,10 +240,10 @@ class BlogEntityHandler{
     
     public function getSomthing(){
         
-        $this->query = 'SELECT creation_date FROM `blog_entity`';        
+        $this->query = 'SELECT creation_date FROM `blog_entity` ORDER BY creation_date';        
         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
         
-         $array;
+        $array;
         $result_array;
         $index = 0;
         while($array = mysql_fetch_array($this->result)) {
