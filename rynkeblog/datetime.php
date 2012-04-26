@@ -1,8 +1,5 @@
 <?php
-/*
- * 
- * 
- */
+//Funker bra Vitaly
 ?>
 <script type="text/javascript">
 function update() {

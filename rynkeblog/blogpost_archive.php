@@ -1,6 +1,6 @@
 <?php
     //Funker godt Vitaly 
-    //Kan utvikles til år søk
+    //Kan utvikles til år søk hvis noen ønsker
     session_start();
     echo "<?xml version=\"1.0\"?>";
 ?>

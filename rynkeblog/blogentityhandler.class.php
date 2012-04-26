@@ -231,9 +231,7 @@ class BlogEntityHandler{
         return $result_array;
     }
     
-    public function monthCheck($_id)
-    {
-        
+    public function monthCheck($_id){//Alt fungerer bra Vitaly 
         $this->query = "SELECT MONTHNAME(creation_date) FROM `blog_entity` WHERE `id`=".$_id;
         $this->result = mysql_query($this->query) or die('Feil, but dont panic' . mysql_error());
         $mnt = mysql_fetch_array($this->result, MYSQL_BOTH);

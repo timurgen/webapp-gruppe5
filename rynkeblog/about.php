@@ -19,9 +19,7 @@
             <div id="about">        
     
 		<h2>About the Blog</h2><br/><br/>
-                   
-                    
-                    <h1>Videreutvikling av Blogg; Krav:</h1>
+                    <h2>Videreutvikling av Blogg; Krav:</h2>
                     <p>
                      This is a blog created for a school project in web-application course.
                     </p>
@@ -36,7 +34,7 @@
                         <li>Det bør være mulig å søke på innleggenes emne og innhold for å finne det en er på jakt etter.</li>
                         <li>Eieren av bloggen bør kunne drive vedlikehold av bloggen og foreta operasjoner som sletting av upassende kommentarer og registrering av nye stikkord (tags).</li>
                     </table>
-                    <P>   
+                    <p>   
                     Created by; Vitaly, Timur and Martin
                     </p>
             </div>
