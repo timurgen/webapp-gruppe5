@@ -19,7 +19,19 @@
                 <table>
                     <tr>
                         <td>
+                            <h3>Martin:</h3>                         
+                                <p>
+                                <a href="http://www.facebook.com/profile.php?id=717942393">Facebook</a> Link to Martins Facebook site
+                                </p>
                             
+                            <h3>Vitaly</h3>
+                                <p>
+                                <a href="http://www.facebook.com/vitalys">Facebook</a> Link to Vitaly Facebook site
+                                </p>
+                            <h3>Tiumr</h3>
+                                <p>
+                                <a href="http://www.facebook.com/timur.samkharadze">Facebook</a> Link to Timur Facebook site
+                                </p>
                         </td>
                     </tr>
                 </table>
