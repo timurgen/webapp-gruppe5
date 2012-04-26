@@ -1,3 +1,10 @@
+<html>
+<head>
+	<meta name="author" content="Gruppe 5" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen, projection" />
+	<title>Ompa Lompa MegaBlog</title>
+</head>
     <?php
         require ('blogentityhandler.class.php');
         if(isset($_POST['search'])) {
