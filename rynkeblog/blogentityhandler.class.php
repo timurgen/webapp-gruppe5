@@ -181,7 +181,7 @@ class BlogEntityHandler{
         //print PHP_EOL."DB Connection closed OK";  
     }
     
-    public function maxID()
+    public function maxID()//Funker godt Vitaly
     {
         $this->query = 'SELECT MAX(id) as id FROM `blog_entity`';
         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
@@ -190,7 +190,7 @@ class BlogEntityHandler{
         return $max;
     }
     
-    public function getName($_id) 
+    public function getName($_id)//Funker godt Vitaly 
     {
         $this->query = 'SELECT username FROM `user` WHERE `userid`='.$_id;
         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
@@ -199,7 +199,7 @@ class BlogEntityHandler{
         return $name;
     }
     
-    public function getComments($_id) {
+    public function getComments($_id) {//Funker godt Vitaly
         
             $this->query = "SELECT * FROM `comments` WHERE `blog_id`=".$_id." ORDER BY date_time";
             $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
@@ -212,7 +212,7 @@ class BlogEntityHandler{
         return $final_result;
     }
     
-    public function getNumberComments($_id) {
+    public function getNumberComments($_id) {//Funker godt Vitaly
         
             $this->query = "SELECT * FROM `comments` WHERE `blog_id`=".$_id;
             $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
@@ -224,7 +224,7 @@ class BlogEntityHandler{
         return $index;
     }
     
-   public function getAllTag() {//funker godt men må sjekke når vi vil ha mange innlegg med mange nøkkelord Timur
+   public function getAllTag() {//funker godt Vitaly (Husker at det returnerer 2 dimensjonal array!)
         $this->query = 'SELECT tags FROM `blog_entity`';        
         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
         $array;

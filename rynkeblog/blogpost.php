@@ -17,6 +17,7 @@
   <body id="home">
       <?php include_once 'menu.php'; ?>
 
+<!-- Alt fungerer bra -->      
     <div class="add_blog">
     <h3>
      Skriv nytt inlegg

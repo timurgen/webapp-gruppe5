@@ -1,4 +1,5 @@
     <?php
+    //Fungerer bra - Vitaly
     session_start();  
     //http://www.youtube.com/watch?v=p-2SiTsABxY
 

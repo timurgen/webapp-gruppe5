@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php 
+    //Må sjekkes på andre gang før innlevering
+    session_start() 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,10 +54,7 @@
 			</div>
 
         </div>         
-            
-             
-
-                
+              
 		<div id="footer">
 			<p><strong>Blog:</strong> <a href=".">Home</a> &middot; <a href="about.htm">About</a> &middot; <a href="links.htm">Links</a> &middot; <a href="#">Login</a> &middot; <a href="contact.htm">Contact</a></p>
 			<p><strong>Network:</strong> <a href="http://www.hin.no"HIN</a> &middot;  <a href="http://www.facebook.com">Facebook</a> &middot;  <a href="http://www.funn.no">Funn-IT</a> &middot;  <a href="http://www.Itslearning.com">Itslearning</a></p>

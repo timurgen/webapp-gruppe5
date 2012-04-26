@@ -1,5 +1,6 @@
 <?php
-    session_start();
+//Alt i orden Vitaly    
+session_start();
     echo "<?xml version=\"1.0\"?>";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -16,7 +17,7 @@
   </head>
     
     <body>
-    <?php
+    <?php   
         include_once 'menu.php';
         ?>
         

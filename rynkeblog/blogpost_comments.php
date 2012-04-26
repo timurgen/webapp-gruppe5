@@ -1,4 +1,5 @@
 <?php
+    //Fungerer - Vitaly
     session_start();
     echo "<?xml version=\"1.0\"?>";
 ?>
