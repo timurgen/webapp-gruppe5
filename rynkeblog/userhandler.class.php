@@ -181,7 +181,7 @@ class UserHandler{
         //sende bekreftelse til email
         //trenger bare epost tjener for å sende epost og teste den
         mail($email, 'Registrasjonsbekrefting', 
-            'Du ble registrert som bruker på MegaBlog, for å aktivere brukerakkount tast inn aktivasjonskode '.$aktivationCode.', her '.$_SERVER['SERVER_ADDR'].'/activate.php, eller trykk her '.$_SERVER['SERVER_ADDR'].'/activate.php?activation='.$aktivationCode); 
+            'Du ble registrert som bruker på MegaBlog, for å aktivere brukerakkount tast inn aktivasjonskode '.$aktivationCode.', her '.$_SERVER['SERVER_NAME'].'/activate.php, eller trykk her '.$_SERVER['SERVER_NAME'].'/activate.php?activation='.$aktivationCode); 
     }
     
     public function activate($code) {//funker godt, Timur
