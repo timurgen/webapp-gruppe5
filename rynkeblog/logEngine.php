@@ -3,7 +3,7 @@
  * Description of logEngine
  * 
  *
- * @author Timur Samkharadze
+ * 
  */
 class logEngine {
     private $logfile;

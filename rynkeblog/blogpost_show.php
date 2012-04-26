@@ -6,7 +6,7 @@
 	<title>Ompa Lompa MegaBlog</title>
 </head>
     <?php
-    //Alt fungerer bra Vitaly
+  
         require ('blogentityhandler.class.php');
         if(isset($_POST['search'])) {
         try

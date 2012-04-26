@@ -1,12 +1,7 @@
 <?PHP
 class BlogEntityHandler{
      /**
-     * @author Timur Samkharadze 
-     * @version 1.0.0
-     * @param 
-     * @param 
-     * @param 
-     * @param 
+      
       * class håndterer alle operasjoner knyttet til blog innlegg
      */
     private $id;

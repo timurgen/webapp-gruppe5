@@ -1,5 +1,5 @@
 <?php
-    //Funker godt Vitaly
+    
     session_start();
     echo "<?xml version=\"1.0\"?>";
     if(isset($_SESSION['userid'])) {

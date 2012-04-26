@@ -1,5 +1,5 @@
 <?php
-//Alt i orden Vitaly    
+    
 session_start();
     echo "<?xml version=\"1.0\"?>";
 ?>

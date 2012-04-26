@@ -1,10 +1,5 @@
 <?php
 
-/*
- * @author 490501
- * @date 20.04.2012
- * @version 1.0.0 
- */
 session_start();
 if(isset($_GET['activation'])){
     //sjekker activation code
