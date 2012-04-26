@@ -40,7 +40,7 @@
                             <ul>
                                <li>
                                   <?php
-                                  include 'date.php';                                 
+                                  include 'datetime.php';                                 
                                   ?>
                                </li>            
                            </ul>

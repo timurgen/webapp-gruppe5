@@ -79,7 +79,7 @@ class BlogEntityHandler{
     
     
     
-        /**
+     /**
      *
      * @param type $_word String med nøkkelord
      * @return type array av id'er til innlegg somm inneholder nøkkelord
@@ -109,8 +109,6 @@ class BlogEntityHandler{
         $result_array = array();
         $index = 0;
         while($array =  mysql_fetch_array($this->result)){
-            
-           
             $result_array[$index] = $array;
              $index++;
             
@@ -231,7 +229,17 @@ class BlogEntityHandler{
         }
         mysql_free_result($this->result);
         return $result_array;
-    } 
+    }
+    
+    public function monthCheck($_id)
+    {
+        
+        $this->query = "SELECT MONTHNAME(creation_date) FROM `blog_entity` WHERE `id`=".$_id;
+        $this->result = mysql_query($this->query) or die('Feil, but dont panic' . mysql_error());
+        $mnt = mysql_fetch_array($this->result, MYSQL_BOTH);
+        $mnt = $mnt[0];
+        return $mnt;
+    }
     
     public function getSomthing(){//ka der er for noe?
         

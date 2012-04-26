@@ -6,66 +6,46 @@
 ?>
 <script type="text/javascript">
 function update() {
-
+    alert(document.getElementById('mt').value)
 }
 </script>
 
   <?php 
         
-   echo " <form name=\"calendar\"  action=\"datetime.php\" method =\"get\">
+   echo "<form action=\"blogpost_archive.php\" method =\"post\">
     Vis innlegg for:
-    <select name=\"month\">
-        <option value=\"1\">January</option>
-        <option value=\"2\">February</option>
-        <option value=\"3\">March</option>
-        <option value=\"4\">April</option>
-        <option value=\"5\">May</option>
-        <option value=\"6\">Juny</option>
-        <option value=\"7\">July</option>
-        <option value=\"8\">August</option>
-        <option value=\"9\">September</option>
-        <option value=\"10\">October</option>
-        <option value=\"11\">November</option>
-        <option value=\"12\">Desember</option>
+    <select name=\"month[]\">
+        <option value=\"January\">January</option>
+        <option value=\"February\">February</option>
+        <option value=\"March\">March</option>
+        <option value=\"April\">April</option>
+        <option value=\"May\">May</option>
+        <option value=\"Juny\">Juny</option>
+        <option value=\"July\">July</option>
+        <option value=\"August\">August</option>
+        <option value=\"September\">September</option>
+        <option value=\"October\">October</option>
+        <option value=\"November\">November</option>
+        <option value=\"Desember\">Desember</option>
     </select>
-    <select name=\"year\">";
-       
-        
-            $year = date('Y');
-             for($i = ($year - 5); $i < $year+1; $i++){
-                 if($i == $year) {
-                     echo "<option selected=\"selected\" name=\"year\">".$i."</option>";
-                 }
-                 else{
-                     echo "<option name=\"year\">".$i."</option>"; 
-                 }
-                 
-             }
-             
-        echo "<input type=\"submit\" name=\"go\" value=\"go\"/>
-        
-      
+        <input type=\"submit\" name=\"go\" value=\"go\"/>
     </select>
 </form>";
   
-        if(isset($_GET["month"])&&isset($_GET["year"]))
-        {   
-           
-            $month = $_GET["month"];
-            $year = $_GET["year"];
-            
-            echo "shit";
-             require("blogentityhandler.class.php");
-            $blogDatabase = new BlogEntityHandler();
-            
-            $blogger = $blogDatabase->getPostByM($month, $_year);
-             
-            
-        }else
-        {
-            echo "ssssssss";
+  /*echo "<form action=\"blogpost_archive.php\" method=\"post\" onsubmit=\"return update()\">
+      <input type=\"text\" id='mt' name=\"month\" />
+      <input type=\"submit\" name=\"go\" value=\"go\"/>";/*
+   
+   
+        /*<select name=\"year\">";
+        $year = date('Y');
+        for($i = ($year - 5); $i < $year+1; $i++){
+        if($i == $year) {
+        echo "<option selected=\"selected\" name=\"year\">".$i."</option>";
         }
-        
+        else{
+        echo "<option name=\"year\">".$i."</option>"; 
+        }}*/        
 ?>
 
  
