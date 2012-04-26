@@ -40,16 +40,13 @@
                             <ul>
                                <li>
                                   <?php
-                                    // echo "Before time";
-                                    include('datetime.php');
-			          ?>
+                                  include 'date.php';                                 
+                                  ?>
                                </li>            
                            </ul>
                                        
                          <?php
-                            
                               include 'search.php';                                 
-                             
                          ?>
 			</div>
 

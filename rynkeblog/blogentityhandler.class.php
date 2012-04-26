@@ -132,7 +132,7 @@ class BlogEntityHandler{
      * @param type $_user_id - kommentator id
      * @param type $_comment - String, comment
      */
-    public function addComment($_id, $_user_id, $_comment) {//funker godt Timur
+    public function addComment($_id, $_user_id, $_comment) {
         //max length of comment is 250 bokstaver
         if(strlen($_comment) > 250) {
             throw new Exception('max length 250!');
