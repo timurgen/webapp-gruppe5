@@ -1,4 +1,6 @@
 <?php
+    //Funker godt Vitaly 
+    //Kan utvikles til år søk
     session_start();
     echo "<?xml version=\"1.0\"?>";
 ?>
@@ -28,11 +30,11 @@
                 {    
                     
                 $showpost = new BlogEntityHandler();
-                $result = $showpost->getEntitiesBySearchWord($_POST['search']);
-                
-                for ($i = count($result); $i > -1; $i--)
+                //$result = $showpost->getEntitiesBySearchWord($_POST['search']);
+                $maxium = $showpost->maxID();
+                for ($i = $maxium; $i > -1; $i--)
                 {
-                    $blogpost = $result[$i];
+                    $blogpost = $showpost->getEntity($i);
                     $postername = $showpost->getName($blogpost['author' ]);
                     $numComments = $showpost->getNumberComments($i);
                     $monthOfPost = $showpost->monthCheck($blogpost[id]);
