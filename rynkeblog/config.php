@@ -13,7 +13,7 @@ $DB_PASS = "gruppe5.2012";
 //navn til database
 $DB_NAME = 'gruppe5';
 //salt til brukerpassord
-$SALT = 'Rjk56JH8';
+$SALT = 'Rjk56JH8'; //ikke rør ellers alle brukere for ikke logge seg på 
 //min lengde av passord
 $PASS_MIN_LENGTH = 6;
 //navn til logfil
