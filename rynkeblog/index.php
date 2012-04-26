@@ -26,7 +26,7 @@
 		<div id="right">
 			<h2>Latest Entries</h2>
 			<ul>
-				<li><a href="blogpost_show.php">Lates post</a></li>			       
+				<li><a href="index.php">Lates post</a></li>			       
 			</ul>
                         
                         <h2>Tags Cloud</h2>
