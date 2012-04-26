@@ -23,8 +23,8 @@ class UserHandler{
      */
     function __construct($_username) {
         include('config.php');
-        $this->username = mysql_escape_string($_username);
-        //$this->username = mysql_escape_string($_username);
+        $this->username = mysql_escape_string($_username); //mysql_escape_real_string krasjer hele webside, vet ikke hvorfor, Timur
+        //$this->username = mysql_real_escape_string($_username);
         //$this->email = $_email;
         $this->dbconnection = mysql_connect($DB_SERVER, $DB_USER, $DB_PASS) or die('Connection error'.PHP_EOL.mysql_error().PHP_EOL);
         //print 'Connection to server OK'.PHP_EOL;
@@ -32,10 +32,10 @@ class UserHandler{
         //print 'Connection to database '.$DB_NAME.' OK'.PHP_EOL;
     }
     /**
-     *funksjpn genererer nytt midlertidig passord, legger til database og sender til brukerens epost
+     *funksjon genererer nytt midlertidig passord, legger til database og sender til brukerens epost
      * vi kjenner brukerens navn fra konstruktør og i tilleg bruker må vise epost adresse selv om vi har den
      */
-    public function sendPassword($_email) {
+    public function sendPassword($_email) {//funker godt, Timur
         include('config.php');
         $this->email = mysql_escape_string($_email);
         //sjekker om bruker eksisterer i databasen
@@ -68,7 +68,7 @@ class UserHandler{
      * @param $_old_password eksisterende passord
      * @param $_new_password nytt passord
      */
-    public function changePassword($_old_password, $_new_password) {
+    public function changePassword($_old_password, $_new_password) {//funker godt, Timur
         include('config.php');
         $this->old_password = $_old_password;
         $this->new_password = $_new_password;
@@ -107,7 +107,7 @@ class UserHandler{
      * @param $_new_password nytt passord
      * @param $_engangspass - passord som var sendt tidligere til epost 
      */
-    public function changePasswordIfLost($_engangspass, $_new_password) {
+    public function changePasswordIfLost($_engangspass, $_new_password) {//funker godt, Timur
         include('config.php');
         $this->new_password = $_new_password;
         //først sjekker at passord lang nok
@@ -140,7 +140,7 @@ class UserHandler{
      *
      * @param type $_isblocked true to block or false to unblock
      */
-    public function blockUnblockUser($_isblocked) {
+    public function blockUnblockUser($_isblocked) {//funker godt, Timur
         include('config.php');
         $this->query = "SELECT * FROM `user` WHERE `username`='".$this->username."'";
         $this->result = mysql_query($this->query) or die('Opps something går weird i blockUnblockUser(): ' . mysql_error());
@@ -165,7 +165,7 @@ class UserHandler{
     /**
      *Skaper ny bruker 
      */
-    public function createUser($name, $email, $pass) {
+    public function createUser($name, $email, $pass) {//funker godt, Timur
         include('config.php');
         //solim passord
         $pass= md5($pass.$SALT);
@@ -184,7 +184,7 @@ class UserHandler{
             'Du ble registrert som bruker på MegaBlog, for å aktivere brukerakkount tast inn aktivasjonskode '.$aktivationCode.', her '.$_SERVER['SERVER_ADDR'].'/activate.php, eller trykk her '.$_SERVER['SERVER_ADDR'].'/activate.php?activation='.$aktivationCode); 
     }
     
-    public function activate($code) {
+    public function activate($code) {//funker godt, Timur
          include('config.php');
          $code = mysql_escape_string($code);
          $this->query = "SELECT * FROM `user` WHERE password_temporary='".$code."'";
@@ -211,7 +211,7 @@ class UserHandler{
     *@param $base symboler som brukes til å generere passorrd
     *@param $hash md5 hash som beregnes av passord  
     */
-    public function passCreater(){
+    public function passCreater(){//funker godt, Timur
 
         $base = str_split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 1);
         shuffle($base);
@@ -230,7 +230,7 @@ class UserHandler{
      *Sjekker brukernavn og passord og returnerer bruker id om det finnes i databasen
      * 
      */
-    public function autentificate($_password) {
+    public function autentificate($_password) {//funker godt, Timur
         include('config.php');
         //beregner hashverdi
         $password = md5($_password.$SALT);
@@ -259,7 +259,7 @@ class UserHandler{
     /**
      *funksjon returnerer multidemensjonal array som inneholder alle kommentarer bruker har gjørt 
      */
-    public function getAllComments() {
+    public function getAllComments() {//funker godt, Timur
         $this->query = "SELECT * FROM `user` WHERE `username`='".$this->username."'";
         //print $this->query.PHP_EOL;
         $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
@@ -282,7 +282,7 @@ class UserHandler{
     /**
      *returnerer alle innlegg bruker har gjørt som an multidemensjonal array
      */
-    public function getAllBlogEntities() {
+    public function getAllBlogEntities() {//funker godt, Timur
         $result_array = array();
         $counter = 0;
         $this->query = "SELECT `userid` FROM `user` WHERE `username`='".$this->username."'";
@@ -311,7 +311,7 @@ class UserHandler{
      * throw exception dersom bruker exists, som skal håndteres av php side og exception message skal vises til bruker
      * @param type $_username 
      */
-    public function checkIfUsernameExists($_username) {
+    public function checkIfUsernameExists($_username) {//funker godt, Timur
         $_username = mysql_escape_string($_username);
         $this->query = "SELECT * FROM `user` WHERE `username`='".mysql_real_escape_string($_username)."'";
         $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
@@ -330,7 +330,7 @@ class UserHandler{
      * @return ingenting om alt er ok
      * @throws Exception dersom epost adresse var tidligere registrert i databasen
      */
-    public function checkIfEmailExists($_email) {
+    public function checkIfEmailExists($_email) {//funker godt, Timur
         $_email = mysql_escape_string($_email);
         $this->query = "SELECT * FROM `user` WHERE `email`='".$_email."'";
         $this->result = mysql_query($this->query) or die('Opps something går weird ' . mysql_error());
@@ -361,7 +361,7 @@ class UserHandler{
         //print PHP_EOL."DB Connection closed OK";
     }
 }
-/////////////////////TEST
+/////////////////////TEST område
 //$test = new UserHandler('test');
 //$test->sendPassword('timkinmail@gmail.com');
 //$test->changePassword("test222", "test222");
