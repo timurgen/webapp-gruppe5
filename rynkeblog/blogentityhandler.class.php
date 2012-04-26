@@ -28,7 +28,7 @@ class BlogEntityHandler{
      * @param type $_tags - nøkkeløord
      * @param type $_payload - bilde for eksempel
      */
-    public function addNewEntity($_username, $_titel, $_text, $_category, $_tags, $_payload) {//funker men ikke testet skikkelig godt
+    public function addNewEntity($_username, $_titel, $_text, $_category, $_tags, $_payload) {//funker men ikke testet skikkelig godt, Timur
         //håndterer begrensinger
         if(strlen($_titel) > 100){//titel max length = 100
             throw new Exception('title max length is 100');
@@ -84,7 +84,7 @@ class BlogEntityHandler{
      * @param type $_word String med nøkkelord
      * @return type array av id'er til innlegg somm inneholder nøkkelord
      */
-    public function getEntitiesBySearchWord($_word) {
+    public function getEntitiesBySearchWord($_word) { //funker godt Timur
         $this->query = 'SELECT * FROM `blog_entity` WHERE `text` LIKE "%'.$_word.'%"';
         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
         $array;
@@ -127,7 +127,7 @@ class BlogEntityHandler{
      * @param type $_user_id - kommentator id
      * @param type $_comment - String, comment
      */
-    public function addComment($_id, $_user_id, $_comment) {
+    public function addComment($_id, $_user_id, $_comment) { //funker godt Timur
         //max length of comment is 250 bokstaver
         if(strlen($_comment) > 250) {
             throw new Exception('max length 250!');
@@ -146,7 +146,7 @@ class BlogEntityHandler{
      * @return type 
      */
     public function getEntitiesByCategori($_category) {
-        //TODO metode skal returnere alle innleg som tilhører gitt kategory
+        //TODO metode skal returnere alle innleg som tilhører gitt kategory, Timur
         return $entities;
     }
     
@@ -156,7 +156,7 @@ class BlogEntityHandler{
      * @param type $new_text ny tekst som skal lagres
      */
     public function updateEntity($_id, $new_text) {
-        //TODO oppdatterer innlegg ved gitt id med gitt text
+        //TODO oppdatterer innlegg ved gitt id med gitt text, Timur
     }
     
     
@@ -233,7 +233,7 @@ class BlogEntityHandler{
         return $result_array;
     } 
     
-    public function getSomthing(){
+    public function getSomthing(){//ka der er for noe?
         
         $this->query = 'SELECT creation_date FROM `blog_entity` ORDER BY creation_date';        
         $this->result = mysql_query($this->query) or die($this->queryError(mysql_error()));
