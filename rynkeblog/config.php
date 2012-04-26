@@ -1,5 +1,6 @@
 <?php
 /***
+ * @author 490501
  * Her defineres alle variabler som er felles i hele applikasjonen
  * denne fila skal inkluderes i alle andre filer som kobler seg for eksempel mot database
  */
